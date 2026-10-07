@@ -18,10 +18,10 @@ export default function Home() {
             <ServicesSection/>
 
             <HowItWorks/>
-
+      <CTASection/>
             <WhyChooseUs/>
 
-            <CTASection/>
+      
 
             <Footer/>
         </main>

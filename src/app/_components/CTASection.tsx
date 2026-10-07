@@ -123,10 +123,11 @@ export default function CTASection() {
                                 h-12
                                 items-center
                                 justify-center
-                                gap-2
+                                gap-4
                                 rounded-full
                                 bg-[#18b9ad]
                                 px-7
+                                py-8
                                 text-[14px]
                                 font-bold
                                 text-white
@@ -135,10 +136,11 @@ export default function CTASection() {
                                 hover:bg-[#159f96]
                                 hover:shadow-lg
                                 sm:text-[15px]
+                                md:text-[30px]
                             "
                     >
                         <Phone
-                            size={17}
+                            size={30}
                             strokeWidth={2.5}
                         />
 
@@ -147,37 +149,7 @@ export default function CTASection() {
                         </span>
                     </Link>
 
-                    <Link
-                        href="#services"
-                        className="
-                                inline-flex
-                                h-12
-                                items-center
-                                justify-center
-                                gap-2
-                                rounded-full
-                                border
-                                border-white/50
-                                bg-white/5
-                                px-7
-                                text-[14px]
-                                font-bold
-                                text-white
-                                backdrop-blur-sm
-                                transition-all
-                                duration-300
-                                hover:bg-white
-                                hover:text-[#00383b]
-                                sm:text-[15px]
-                            "
-                    >
-                        <span>Learn More</span>
-
-                        <ArrowRight
-                            size={17}
-                            strokeWidth={2.3}
-                        />
-                    </Link>
+                    
 
                 </div>
             </div>
