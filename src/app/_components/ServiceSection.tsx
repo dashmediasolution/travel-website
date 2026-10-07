@@ -10,7 +10,6 @@ import {
     Plane,
     X,
 } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 
 interface ServiceCardProps {
@@ -53,7 +52,7 @@ const services = [
         description:
             "Book the right flight at the right price — with expert guidance and real-time support.",
         icon: <Map size={17} strokeWidth={2.3} />,
-        image: "/images/travelPlanning.png",
+        image: "/images/planning.jpg",
         variant: "normal" as const,
     },
     {
@@ -349,7 +348,7 @@ export default function ServicesSection() {
                         md:grid-cols-2
 
                          lg:grid-cols-[1.5fr_3fr]
-                        lg:grid-rows-[330px_162px]
+                        lg:grid-rows-[415px_162px]
                     "
                 >
                     {/* ================================= */}
@@ -423,24 +422,102 @@ export default function ServicesSection() {
                             image={services[3].image}
                             variant="normal"
                             className="
-                                min-h-[260px]
+                                min-h-[350px]
 
                                 lg:col-span-2
                              "
                         />
 
                         {/* Itinerary Help */}
-                        <ServiceCard
-                            title={services[4].title}
-                            description={services[4].description}
-                            icon={services[4].icon}
-                            variant="plain"
+                        <div
                             className="
-                                  min-h-[260px]
+        relative
+        h-full
+        min-h-[350px]
+        overflow-hidden
+        rounded-[14px]
+        bg-[#ccefed]
+        lg:col-span-2
+    "
+                        >
+                            {/* Content */}
+                            <div
+                                className="
+            z-10
+            flex
+            h-full
+            flex-col
+            p-4
+            sm:p-5
+        "
+                            >
+                                {/* Icon */}
+                                <div
+                                    className="
+                flex
+                h-7
+                w-7
+                shrink-0
+                items-center
+                justify-center
+                rounded-full
+                bg-white
+                text-[#159b9c]
+            "
+                                >
+                                    <List size={17} strokeWidth={2.3} />
+                                </div>
 
-                                lg:col-span-2
-                             "
-                        />
+                                {/* Text */}
+                                <div className="mt-2.5 max-w-[285px]">
+                                    <h3
+                                        className="
+                    text-3xl
+                    font-bold
+                    md:text-[1.5rem]
+                    leading-[1.08]
+                    tracking-[-0.025em]
+                    text-[#073452]
+                "
+                                    >
+                                        Itinerary Help
+                                    </h3>
+
+                                    <p
+                                        className="
+                                            mt-1.5
+                                            max-w-[270px]
+                                            text-base
+                                            sm:text-[20px]
+                                            md:text-base
+                                            font-medium
+                                            leading-[1.25]
+                                            text-[#34546a]
+                                        "
+                                    >
+                                        Book the right flight at the right price — with expert
+                                        guidance and real-time support.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Plane SVG */}
+                            <Image
+                                src="/images/plane.svg"
+                                alt=""
+                                width={140}
+                                height={100}
+                                className="
+            absolute
+            bottom-7
+            right-14
+            z-0
+            w-[150px]
+            object-contain
+            opacity-90
+        "
+                            />
+                        </div>
 
                         {/* Travel Support */}
                         <ServiceCard
@@ -450,7 +527,7 @@ export default function ServicesSection() {
                             image={services[5].image}
                             variant="teal"
                             className="
-                                 min-h-[260px]
+                                 min-h-[350px]
 
 
                                 lg:col-span-2
