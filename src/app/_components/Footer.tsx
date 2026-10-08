@@ -10,6 +10,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { FaYoutube } from "react-icons/fa";
+import Image from "next/image";
 
 const quickLinks = [
    
@@ -79,35 +80,18 @@ export default function Footer() {
                                 gap-3
                             "
                         >
-                            <span
-                                className="
-                                    flex
-                                    h-10
-                                    w-10
-                                    items-center
-                                    justify-center
-                                    rounded-full
-                                    bg-[#159b9c]
-                                    text-white
-                                "
-                            >
-                                <Plane
-                                    size={19}
-                                    strokeWidth={2.4}
-                                />
-                            </span>
+                   
 
-                            <span
-                                className="
-                                    text-[22px]
-                                    font-bold
-                                    tracking-[-0.03em]
-                                    text-[#073452]
-                                "
-                            >
-                                Vuelofare
-                            </span>
-                        </Link>
+
+                    <Image
+                        src="/images/vuelofarelogo.svg"
+                        alt="Vuelofare"
+                        width={140}
+                        height={40}
+                        className="hidden h-auto w-[110px] sm:flex md:w-[140px]"
+                    />
+                </Link>
+                   
 
                         <p
                             className="

@@ -2,8 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 
-import CallUsDialog from "./_components/CallUsDialog";
-import Navbar from "./_components/Navbar";
+ import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 
 const geist = Geist({
@@ -124,8 +123,7 @@ export default function RootLayout({
 
                 <main className="min-h-screen">{children}</main>
 
-                <CallUsDialog />
-
+ 
                 <Footer />
             </body>
         </html>

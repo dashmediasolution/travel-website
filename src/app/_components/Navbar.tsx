@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ChevronDown, Phone, Menu } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
     Sheet,
@@ -49,32 +50,19 @@ export default function Navbar() {
                     className="flex shrink-0 items-center gap-2.5"
                     onClick={() => setIsOpen(false)}
                 >
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#129c98]">
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            className="h-[18px] w-[18px] -rotate-12"
-                        >
-                            <path
-                                d="M3 13.5L21 7L14.5 21L11.5 14.5L3 13.5Z"
-                                fill="white"
-                            />
-                            <path
-                                d="M11.5 14.5L21 7"
-                                stroke="white"
-                                strokeWidth="1.5"
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                    </div>
 
-                    <span className="hidden text-[19px] font-bold tracking-[-0.4px] text-[#073d5b] sm:flex md:text-3xl">
-                        Vuelofare
-                    </span>
+
+                    <Image
+                        src="/images/vuelofarelogo.svg"
+                        alt="Vuelofare"
+                        width={140}
+                        height={40}
+                        className="hidden h-auto w-[110px] sm:flex md:w-[140px]"
+                    />
                 </Link>
 
                 {/* Desktop Navigation */}
-              
+
 
                 {/* Desktop CTA */}
                 <Link
