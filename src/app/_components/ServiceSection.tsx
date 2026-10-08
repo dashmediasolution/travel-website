@@ -11,16 +11,17 @@ import {
     X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import Link from "next/link";
 interface Service {
+    slug: string;
     title: string;
     description: string;
     icon: React.ReactNode;
     image: string;
 }
-
 const services: Service[] = [
     {
+        slug: "flight-reservations",
         title: "Your Journey Starts Here",
         description:
             "Find and book the right flights for your trip with expert guidance and reliable assistance.",
@@ -28,6 +29,7 @@ const services: Service[] = [
         image: "/images/flight.png",
     },
     {
+        slug: "flight-changes",
         title: "Plans Change. We Adapt.",
         description:
             "Need to adjust your travel plans? We’ll help update your existing bookings quickly and smoothly.",
@@ -35,6 +37,7 @@ const services: Service[] = [
         image: "/images/image_02.png",
     },
     {
+        slug: "flight-cancellations",
         title: "Change of Plans?",
         description:
             "Need to cancel your flight? We’ll guide you through the cancellation process and refund options.",
@@ -42,6 +45,7 @@ const services: Service[] = [
         image: "/images/image_01.png",
     },
     {
+        slug: "trip-planning",
         title: "Make Every Trip Count",
         description:
             "Planning a multi-stop trip? We’ll help coordinate your travel plans and create a smooth itinerary.",
@@ -49,6 +53,7 @@ const services: Service[] = [
         image: "/images/planning.jpg",
     },
     {
+        slug: "itinerary-assistance",
         title: "Everything in One Place",
         description:
             "Need help with your itinerary? We’ll review your plans, confirm details, and keep every trip step organized.",
@@ -56,6 +61,7 @@ const services: Service[] = [
         image: "/images/itinerary.png",
     },
     {
+        slug: "travel-support",
         title: "We're Here When You Need Us",
         description:
             "Have a question about your trip? Speak with a specialist for personalized guidance and assistance.",
@@ -66,68 +72,72 @@ const services: Service[] = [
 
 function ServiceCard({ service }: { service: Service }) {
     return (
-        <article className="group overflow-hidden rounded-[18px] bg-white shadow-[0_8px_30px_rgba(0,56,59,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,56,59,0.10)]">
-            {/* Image */}
-            <div className="relative  aspect-[2.7/1] ">
-                <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    sizes="
-                        (max-width: 767px) 100vw,
-                        (max-width: 1023px) 50vw,
-                        33vw
-                    "
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-
-                {/* Icon */}
-                <div className="absolute bottom-[-30] z-10 left-5  flex h-13 w-13 items-center justify-center rounded-[17px] border-5 border-white bg-[#e5faf7] text-[#159b9c] shadow-sm">
-                    {service.icon}
-                </div>
-            </div>
-
-            {/* Content */}
-            <div className="flex min-h-[178px] z-6 flex-col px-5 pb-5 pt-10">
-                <h3 className="text-[20px] font-bold leading-[1.15] tracking-light text-[#073452] sm:text-[21px]">
-                    {service.title}
-                </h3>
-
-                <p className="mt-2 max-w-97.5 text-[14px] font-medium leading-[1.55] text-[#7b8fa3] sm:text-[15px] md:text-base">
-                    {service.description}
-                </p>
-
-                {/* Learn More */}
-                <div className="mt-auto flex items-center gap-4 pt-3">
-                    <span className="text-[14px] font-bold text-[#159b9c]">
-                        Learn More
-                    </span>
-
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        className="
-                            h-10
-                            w-10
-                            rounded-full
-                            border-[#b9d2d8]
-                            bg-white
-                            text-[#159b9c]
-                            shadow-none
-                            transition-all
-                            duration-300
-                            hover:border-[#159b9c]
-                            hover:bg-[#159b9c]
-                            hover:text-white
-                            group-hover:translate-x-1
+        <Link
+            href={`/services/${service?.slug}`}
+            className="group block overflow-hidden rounded-[18px] bg-white shadow-[0_8px_30px_rgba(0,56,59,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,56,59,0.10)]"
+        >
+            <article>
+                {/* Image */}
+                <div className="relative aspect-[2.7/1]">
+                    <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        sizes="
+                            (max-width: 767px) 100vw,
+                            (max-width: 1023px) 50vw,
+                            33vw
                         "
-                        aria-label={`Learn more about ${service.title}`}
-                    >
-                        <ArrowRight size={18} strokeWidth={2.2} />
-                    </Button>
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+
+                    {/* Icon */}
+                    <div className="absolute bottom-[-30px] left-5 z-10 flex h-13 w-13 items-center justify-center rounded-[17px] border-5 border-white bg-[#e5faf7] text-[#159b9c] shadow-sm">
+                        {service.icon}
+                    </div>
                 </div>
-            </div>
-        </article>
+
+                {/* Content */}
+                <div className="flex min-h-[178px] flex-col px-5 pb-5 pt-10">
+                    <h3 className="text-[20px] font-bold leading-[1.15] tracking-tight text-[#073452] sm:text-[21px]">
+                        {service.title}
+                    </h3>
+
+                    <p className="mt-2 max-w-[390px] text-[14px] font-medium leading-[1.55] text-[#7b8fa3] sm:text-[15px] md:text-base">
+                        {service.description}
+                    </p>
+
+                    <div className="mt-auto flex items-center gap-4 pt-3">
+                        <span className="text-[14px] font-bold text-[#159b9c]">
+                            Learn More
+                        </span>
+
+                        <div
+                            className="
+                                flex
+                                h-10
+                                w-10
+                                items-center
+                                justify-center
+                                rounded-full
+                                border
+                                border-[#b9d2d8]
+                                bg-white
+                                text-[#159b9c]
+                                transition-all
+                                duration-300
+                                group-hover:translate-x-1
+                                group-hover:border-[#159b9c]
+                                group-hover:bg-[#159b9c]
+                                group-hover:text-white
+                            "
+                        >
+                            <ArrowRight size={18} strokeWidth={2.2} />
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </Link>
     );
 }
 

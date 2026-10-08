@@ -9,21 +9,19 @@ import WhyChooseUs from "./_components/WhyChooseUs";
 export default function Home() {
     return (
         <main className="min-h-screen bg-white">
-            <Navbar />
 
             <HeroSection />
 
             <TrustInformation />
 
-            <ServicesSection/>
+            <ServicesSection />
 
-            <HowItWorks/>
-      <CTASection/>
-            <WhyChooseUs/>
+            <HowItWorks />
+            <CTASection />
+            <WhyChooseUs />
 
-      
 
-            <Footer/>
+
         </main>
     );
 }

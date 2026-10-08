@@ -1,0 +1,615 @@
+export interface ServiceContent {
+    slug: string;
+    title: string;
+    shortTitle: string;
+    label: string;
+    description: string;
+
+    heroImage: string;
+    overviewImage: string;
+    conditionsImage: string;
+
+    heroPoints: {
+        title: string;
+        description: string;
+    }[];
+
+    overview: {
+        title: string;
+        paragraphs: string[];
+        note: string;
+    };
+
+    keyInformation: {
+        title: string;
+        description: string;
+        items: string[];
+    };
+
+    confidenceCard: {
+        title: string;
+        description: string;
+        items: string[];
+    };
+
+    generalConditions: {
+        title: string;
+        description: string;
+        points: string[];
+        footerText: string;
+    };
+
+    relatedServices: string[];
+}
+
+export const servicesContent: Record<string, ServiceContent> = {
+    "flight-reservations": {
+        slug: "flight-reservations",
+        title: "Flight Reservations",
+        shortTitle: "Flight Reservations",
+        label: "FLIGHT RESERVATIONS",
+
+        description:
+            "Find the right flight for your journey with expert assistance, flexible options, and reliable booking support from start to finish.",
+
+        heroImage:
+            "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=85",
+
+        overviewImage:
+            "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1200&q=85",
+
+        conditionsImage:
+            "https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=85",
+
+        heroPoints: [
+            {
+                title: "Flexible Options",
+                description: "Compare suitable flight options.",
+            },
+            {
+                title: "Expert Guidance",
+                description: "Get help choosing the right itinerary.",
+            },
+            {
+                title: "Easy Booking",
+                description: "Complete your reservation with confidence.",
+            },
+        ],
+
+        overview: {
+            title: "How does flight reservation assistance work?",
+            paragraphs: [
+                "Finding the right flight can take time. Our flight reservation assistance helps you explore suitable travel options based on your destination, preferred dates, timing, and travel requirements.",
+                "Whether you are planning a business trip, family vacation, or last-minute journey, our specialists can help you understand available options and organize your booking details.",
+            ],
+            note:
+                "Not sure which flight option works best for you? Our travel specialists can help you review the available choices before you book.",
+        },
+
+        keyInformation: {
+            title: "What We Help You With",
+            description:
+                "From comparing flight options to reviewing booking details, we help make the reservation process easier and more organized.",
+            items: [
+                "Flight option comparison",
+                "Departure and arrival details",
+                "Travel date and timing assistance",
+                "Passenger information guidance",
+                "Fare and booking information",
+                "Basic baggage information",
+                "Seat and service information",
+                "Booking confirmation assistance",
+            ],
+        },
+
+        confidenceCard: {
+            title: "Travel with Confidence",
+            description:
+                "Get the support you need before completing your flight reservation.",
+            items: [
+                "Flight Options",
+                "Travel Dates",
+                "Passenger Details",
+                "Fare Information",
+            ],
+        },
+
+        generalConditions: {
+            title: "General Conditions for Flight Reservations",
+            description:
+                "Flight reservations are subject to the rules, availability, and conditions of the airline and selected fare.",
+            points: [
+                "Flight availability may change at any time.",
+                "Fare prices can change before a booking is completed.",
+                "Passenger information should match the required travel documents.",
+                "Baggage allowances depend on the selected airline and fare.",
+                "Additional airline services may have separate charges.",
+                "Travel documents and entry requirements remain the traveler's responsibility.",
+            ],
+            footerText:
+                "For the most accurate information, always review the airline's fare conditions and booking details before completing your reservation.",
+        },
+
+        relatedServices: [
+            "flight-changes",
+            "flight-cancellations",
+            "trip-planning",
+            "itinerary-assistance",
+        ],
+    },
+
+    "flight-changes": {
+        slug: "flight-changes",
+        title: "Flight Changes",
+        shortTitle: "Flight Changes",
+        label: "FLIGHT CHANGES",
+
+        description:
+            "Plans changed? Get assistance with modifying your flight dates, times, routes, and other booking details.",
+
+        heroImage:
+            "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?auto=format&fit=crop&w=1400&q=85",
+
+        overviewImage:
+            "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=1200&q=85",
+
+        conditionsImage:
+            "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=85",
+
+        heroPoints: [
+            {
+                title: "Flexible Changes",
+                description: "Review available flight alternatives.",
+            },
+            {
+                title: "Clear Guidance",
+                description: "Understand applicable change conditions.",
+            },
+            {
+                title: "Smooth Assistance",
+                description: "Get support throughout the process.",
+            },
+        ],
+
+        overview: {
+            title: "Need to change your flight?",
+            paragraphs: [
+                "Travel plans can change unexpectedly. Whether your schedule has shifted or you need a different departure time, our flight change assistance helps you understand the available options.",
+                "We can help you review alternative flights, understand applicable fare conditions, and organize the information needed to make a change to your existing booking.",
+            ],
+            note:
+                "Change fees, fare differences, and availability depend on the airline and fare rules associated with your booking.",
+        },
+
+        keyInformation: {
+            title: "Flight Changes We Can Help With",
+            description:
+                "We can guide you through common flight modification requests and help you understand what may be required.",
+            items: [
+                "Changing travel dates",
+                "Changing departure times",
+                "Reviewing alternative flights",
+                "Understanding fare differences",
+                "Checking change conditions",
+                "Reviewing available routes",
+                "Passenger information guidance",
+                "Updated booking confirmation",
+            ],
+        },
+
+        confidenceCard: {
+            title: "Change Plans with Confidence",
+            description:
+                "Understand your options before making changes to your booking.",
+            items: [
+                "New Travel Dates",
+                "Alternative Flights",
+                "Fare Differences",
+                "Change Conditions",
+            ],
+        },
+
+        generalConditions: {
+            title: "General Conditions for Flight Changes",
+            description:
+                "Flight changes are governed by the airline's fare rules and the conditions attached to your original booking.",
+            points: [
+                "Changes are subject to flight availability.",
+                "Airlines may charge change fees depending on the fare.",
+                "A fare difference may apply when selecting a new flight.",
+                "Some fares may have restrictions on changes.",
+                "Changes must be completed before the applicable airline deadline.",
+                "The final cost depends on the airline and selected flight.",
+            ],
+            footerText:
+                "Before changing your booking, review the applicable airline conditions and the total amount payable for the new itinerary.",
+        },
+
+        relatedServices: [
+            "flight-reservations",
+            "flight-cancellations",
+            "itinerary-assistance",
+            "travel-support",
+        ],
+    },
+
+    "flight-cancellations": {
+        slug: "flight-cancellations",
+        title: "Flight Cancellations",
+        shortTitle: "Flight Cancellations",
+        label: "FLIGHT CANCELLATIONS",
+
+        description:
+            "Need to cancel your flight? Get clear guidance on cancellation procedures, fare conditions, and possible refund options.",
+
+        heroImage:
+            "https://images.unsplash.com/photo-1517400508447-f8dd518b86db?auto=format&fit=crop&w=1400&q=85",
+
+        overviewImage:
+            "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=85",
+
+        conditionsImage:
+            "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85",
+
+        heroPoints: [
+            {
+                title: "Clear Process",
+                description: "Understand the cancellation steps.",
+            },
+            {
+                title: "Refund Guidance",
+                description: "Review possible refund conditions.",
+            },
+            {
+                title: "Helpful Support",
+                description: "Get assistance when plans change.",
+            },
+        ],
+
+        overview: {
+            title: "What happens when you cancel a flight?",
+            paragraphs: [
+                "Cancelling a flight can involve different rules depending on the airline, fare type, booking conditions, and time of cancellation.",
+                "Our cancellation assistance helps you understand the available process and the information you may need before proceeding with your request.",
+            ],
+            note:
+                "Refund eligibility and cancellation charges depend on the airline's fare rules and the specific booking.",
+        },
+
+        keyInformation: {
+            title: "Cancellation & Refund Information",
+            description:
+                "Before cancelling your flight, it is important to understand the conditions that may affect your refund.",
+            items: [
+                "Cancellation procedure",
+                "Refund eligibility",
+                "Cancellation charges",
+                "Fare restrictions",
+                "Refund timelines",
+                "Airline cancellation conditions",
+                "Taxes and applicable fees",
+                "Booking cancellation confirmation",
+            ],
+        },
+
+        confidenceCard: {
+            title: "Cancel with Confidence",
+            description:
+                "Understand the important details before cancelling your reservation.",
+            items: [
+                "Cancellation Rules",
+                "Refund Eligibility",
+                "Applicable Fees",
+                "Refund Timeline",
+            ],
+        },
+
+        generalConditions: {
+            title: "General Conditions for Flight Cancellations",
+            description:
+                "Cancellation and refund conditions vary according to the airline, fare type, and booking terms.",
+            points: [
+                "Some fares may be non-refundable.",
+                "Cancellation charges may apply.",
+                "Refund amounts depend on the fare rules.",
+                "Taxes and fees may be treated differently from the base fare.",
+                "Refund processing times vary by airline and payment method.",
+                "Airline schedule changes may have different cancellation conditions.",
+            ],
+            footerText:
+                "Always review the cancellation and refund conditions associated with your booking before confirming a cancellation.",
+        },
+
+        relatedServices: [
+            "flight-reservations",
+            "flight-changes",
+            "travel-support",
+            "itinerary-assistance",
+        ],
+    },
+
+    "trip-planning": {
+        slug: "trip-planning",
+        title: "Trip Planning",
+        shortTitle: "Trip Planning",
+        label: "TRIP PLANNING",
+
+        description:
+            "Planning a new adventure? Get practical travel assistance to organize flights, destinations, schedules, and important trip details.",
+
+        heroImage:
+            "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1400&q=85",
+
+        overviewImage:
+            "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=85",
+
+        conditionsImage:
+            "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85",
+
+        heroPoints: [
+            {
+                title: "Plan Smarter",
+                description: "Organize your journey efficiently.",
+            },
+            {
+                title: "Better Choices",
+                description: "Review practical travel options.",
+            },
+            {
+                title: "Less Stress",
+                description: "Keep important trip details organized.",
+            },
+        ],
+
+        overview: {
+            title: "How can trip planning make travel easier?",
+            paragraphs: [
+                "A well-organized trip starts with understanding your destination, dates, transportation, and schedule. Our trip planning assistance helps you bring these details together before your journey.",
+                "Whether you are traveling alone, with family, or managing a multi-stop journey, we can help you organize the important parts of your travel plan.",
+            ],
+            note:
+                "A good travel plan leaves room for flexibility while keeping your most important travel details organized.",
+        },
+
+        keyInformation: {
+            title: "Trip Planning Assistance",
+            description:
+                "We help you organize the practical details that can make your journey easier.",
+            items: [
+                "Destination planning",
+                "Flight planning",
+                "Multi-city travel coordination",
+                "Travel date planning",
+                "Transportation planning",
+                "Schedule organization",
+                "Important travel details",
+                "Pre-trip checklist guidance",
+            ],
+        },
+
+        confidenceCard: {
+            title: "Travel Better Prepared",
+            description:
+                "Keep your travel plans organized from the beginning.",
+            items: [
+                "Destination Planning",
+                "Travel Schedule",
+                "Transportation",
+                "Trip Details",
+            ],
+        },
+
+        generalConditions: {
+            title: "General Trip Planning Considerations",
+            description:
+                "Travel plans should be reviewed carefully because schedules, availability, and destination conditions can change.",
+            points: [
+                "Transportation availability may change.",
+                "Flight and hotel prices can vary over time.",
+                "Travel documents should be checked before departure.",
+                "Destination entry requirements may apply.",
+                "Weather can affect transportation and activities.",
+                "Travelers should keep booking confirmations accessible.",
+            ],
+            footerText:
+                "Planning ahead can help reduce last-minute issues and make it easier to respond when travel arrangements change.",
+        },
+
+        relatedServices: [
+            "flight-reservations",
+            "itinerary-assistance",
+            "flight-changes",
+            "travel-support",
+        ],
+    },
+
+    "itinerary-assistance": {
+        slug: "itinerary-assistance",
+        title: "Itinerary Assistance",
+        shortTitle: "Itinerary Assistance",
+        label: "ITINERARY ASSISTANCE",
+
+        description:
+            "Keep every part of your journey organized with assistance reviewing flights, schedules, connections, and important travel details.",
+
+        heroImage:
+            "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=85",
+
+        overviewImage:
+            "https://images.unsplash.com/photo-1494783367193-149034c05e8f?auto=format&fit=crop&w=1200&q=85",
+
+        conditionsImage:
+            "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=85",
+
+        heroPoints: [
+            {
+                title: "Stay Organized",
+                description: "Keep your travel details together.",
+            },
+            {
+                title: "Review Connections",
+                description: "Check important journey details.",
+            },
+            {
+                title: "Travel Prepared",
+                description: "Know what comes next in your trip.",
+            },
+        ],
+
+        overview: {
+            title: "Why is itinerary assistance useful?",
+            paragraphs: [
+                "Travel itineraries can become complicated when they include multiple flights, destinations, connections, or activities.",
+                "Our itinerary assistance helps you review the important parts of your journey so you can keep your travel schedule clear and organized.",
+            ],
+            note:
+                "Keeping an updated itinerary can make it easier to manage your journey and respond to schedule changes.",
+        },
+
+        keyInformation: {
+            title: "What We Can Review",
+            description:
+                "We can help you organize and review the key details included in your travel itinerary.",
+            items: [
+                "Flight schedules",
+                "Departure and arrival information",
+                "Connecting flights",
+                "Travel dates",
+                "Destination sequence",
+                "Booking references",
+                "Important travel notes",
+                "Trip schedule organization",
+            ],
+        },
+
+        confidenceCard: {
+            title: "Know Your Journey",
+            description:
+                "Keep important travel information organized and easy to understand.",
+            items: [
+                "Flight Details",
+                "Connections",
+                "Travel Dates",
+                "Booking Information",
+            ],
+        },
+
+        generalConditions: {
+            title: "General Itinerary Conditions",
+            description:
+                "Travel schedules and itinerary details can change according to airline operations and individual booking conditions.",
+            points: [
+                "Flight schedules may change after booking.",
+                "Connection times should be reviewed carefully.",
+                "Travelers should check departure times before travel.",
+                "Airline schedule changes may affect connecting flights.",
+                "Separate bookings may have separate conditions.",
+                "Travel documents should be kept accessible throughout the journey.",
+            ],
+            footerText:
+                "Review your itinerary before departure and check with the airline for any last-minute schedule updates.",
+        },
+
+        relatedServices: [
+            "trip-planning",
+            "flight-reservations",
+            "flight-changes",
+            "travel-support",
+        ],
+    },
+
+    "travel-support": {
+        slug: "travel-support",
+        title: "Travel Support",
+        shortTitle: "Travel Support",
+        label: "TRAVEL SUPPORT",
+
+        description:
+            "Have a question about your trip? Get reliable assistance when you need help understanding your travel plans and options.",
+
+        heroImage:
+            "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&w=1400&q=85",
+
+        overviewImage:
+            "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=85",
+
+        conditionsImage:
+            "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=85",
+
+        heroPoints: [
+            {
+                title: "Real Assistance",
+                description: "Speak with someone when you need help.",
+            },
+            {
+                title: "Travel Guidance",
+                description: "Get practical information for your journey.",
+            },
+            {
+                title: "Peace of Mind",
+                description: "Know where to turn when plans change.",
+            },
+        ],
+
+        overview: {
+            title: "When can travel support help?",
+            paragraphs: [
+                "Travel can involve unexpected questions, changes, and situations. Having access to reliable assistance can make it easier to understand your options and decide what to do next.",
+                "Our travel support service is designed to help you navigate common travel questions and provide guidance related to your booking and journey.",
+            ],
+            note:
+                "For airline-specific operational decisions, the airline's current policies and instructions remain the final authority.",
+        },
+
+        keyInformation: {
+            title: "Travel Support Services",
+            description:
+                "Our specialists can help you understand and organize information related to your journey.",
+            items: [
+                "General travel questions",
+                "Flight information guidance",
+                "Booking information",
+                "Travel schedule assistance",
+                "Flight change guidance",
+                "Cancellation information",
+                "Itinerary assistance",
+                "General travel preparation",
+            ],
+        },
+
+        confidenceCard: {
+            title: "We're Here to Help",
+            description:
+                "Get practical travel guidance when you need an extra hand.",
+            items: [
+                "Travel Questions",
+                "Booking Help",
+                "Schedule Guidance",
+                "Trip Assistance",
+            ],
+        },
+
+        generalConditions: {
+            title: "General Travel Support Conditions",
+            description:
+                "Travel support is intended to provide guidance and assistance based on the information available for your booking.",
+            points: [
+                "Airline policies can change without notice.",
+                "Flight schedules are controlled by the operating airline.",
+                "Final airline decisions remain subject to airline rules.",
+                "Availability and pricing can change at any time.",
+                "Travelers remain responsible for valid travel documents.",
+                "Some requests may require direct communication with the airline.",
+            ],
+            footerText:
+                "When you are unsure about your next step, our support team can help you understand the available options and information.",
+        },
+
+        relatedServices: [
+            "flight-reservations",
+            "flight-changes",
+            "flight-cancellations",
+            "itinerary-assistance",
+        ],
+    },
+};

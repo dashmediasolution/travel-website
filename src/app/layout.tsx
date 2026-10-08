@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CallUsDialog from "./_components/CallUsDialog";
-
+import Navbar from "./_components/Navbar";
+import Footer from "./_components/Footer";
 const geistSans = Geist({
     variable: "--font-geist-sans",
     subsets: ["latin"],
@@ -21,14 +22,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
     return (
-        <html
-            lang="en"
-            className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-        >
-            <body className="min-h-full flex flex-col">
-                {children}
+         <html lang="en">
+            <body className="min-h-screen antialiased">
+                <Navbar />
 
-                <CallUsDialog />
+                <main className="min-h-screen">
+                    {children}
+                </main>
+
+                <Footer />
             </body>
         </html>
     );
