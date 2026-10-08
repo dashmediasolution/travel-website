@@ -21,7 +21,7 @@ const steps: HowItWorksStep[] = [
         icon: <Phone size={24} strokeWidth={2.2} />,
     },
     {
-        title: "Get Expert Support",
+        title: "Get Expert Assistance",
         description:
             "Share your needs and let us handle the details with care.",
         icon: <UserRound size={24} strokeWidth={2.2} />,

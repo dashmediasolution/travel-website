@@ -25,7 +25,7 @@ const features = [
     },
     {
         icon: Clock3,
-        title: "24/7 Support",
+        title: "24/7 Assistance",
         description: "Get help anytime, from anywhere.",
     },
     {
@@ -36,7 +36,7 @@ const features = [
     {
         icon: Users,
         title: "Personalized Solutions",
-        description: "Tailored support for your unique needs.",
+        description: "Tailored assistance for your unique needs.",
     },
     {
         icon: Tag,
@@ -245,7 +245,7 @@ export default function WhyChooseUs() {
                     >
                         <Image
                             src="/images/whyCallUs.png"
-                            alt="TravelConnect travel support"
+                            alt="TravelConnect travel assistance"
                             width={700}
                             height={500}
                             priority

@@ -3,248 +3,129 @@
 import Image from "next/image";
 import {
     ArrowRight,
-    ArrowUpRight,
     Headphones,
     List,
     Map,
     Plane,
+    RefreshCw,
     X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-interface ServiceCardProps {
+interface Service {
     title: string;
     description: string;
     icon: React.ReactNode;
-    image?: string;
-    className?: string;
-    variant?: "normal" | "teal" | "light" | "plain";
-    lightText?: boolean;
+    image: string;
 }
 
-const services = [
+const services: Service[] = [
     {
-        title: "Flight Reservations",
+        title: "Your Journey Starts Here",
         description:
-            "Book the right flight at the right price — with expert guidance and real-time support.",
-        icon: <Plane size={17} strokeWidth={2.5} />,
+            "Find and book the right flights for your trip with expert guidance and reliable assistance.",
+        icon: <Plane size={22} strokeWidth={2.2} />,
         image: "/images/flight.png",
-        variant: "normal" as const,
     },
     {
-        title: "Flight Changes",
+        title: "Plans Change. We Adapt.",
         description:
-            "Book the right flight at the right price — with expert guidance and real-time support.",
-        icon: <Plane size={17} strokeWidth={2.5} />,
+            "Need to adjust your travel plans? We’ll help update your existing bookings quickly and smoothly.",
+        icon: <RefreshCw size={22} strokeWidth={2.2} />,
         image: "/images/image_02.png",
-        variant: "teal" as const,
     },
     {
-        title: "Cancellations",
+        title: "Change of Plans?",
         description:
-            "Book the right flight at the right price — with expert guidance and real-time support.",
-        icon: <X size={18} strokeWidth={2.5} />,
+            "Need to cancel your flight? We’ll guide you through the cancellation process and refund options.",
+        icon: <X size={24} strokeWidth={2.2} />,
         image: "/images/image_01.png",
-        variant: "light" as const,
     },
     {
-        title: "Travel Planning",
+        title: "Make Every Trip Count",
         description:
-            "Book the right flight at the right price — with expert guidance and real-time support.",
-        icon: <Map size={17} strokeWidth={2.3} />,
+            "Planning a multi-stop trip? We’ll help coordinate your travel plans and create a smooth itinerary.",
+        icon: <Map size={22} strokeWidth={2.2} />,
         image: "/images/planning.jpg",
-        variant: "normal" as const,
     },
     {
-        title: "Itinerary Help",
+        title: "Everything in One Place",
         description:
-            "Book the right flight at the right price — with expert guidance and real-time support.",
-        icon: <List size={17} strokeWidth={2.3} />,
-        variant: "plain" as const,
+            "Need help with your itinerary? We’ll review your plans, confirm details, and keep every trip step organized.",
+        icon: <List size={22} strokeWidth={2.2} />,
+        image: "/images/itinerary.png",
     },
     {
-        title: "Travel Support",
+        title: "We're Here When You Need Us",
         description:
-            "Book the right flight at the right price — with expert guidance and real-time support.",
-        icon: <Headphones size={17} strokeWidth={2.3} />,
-        image: "/images/image_06.png",
-        variant: "teal" as const,
+            "Have a question about your trip? Speak with a specialist for personalized guidance and assistance.",
+        icon: <Headphones size={22} strokeWidth={2.2} />,
+        image: "/images/support.jpg",
     },
 ];
-function ServiceCard({
-    title,
-    description,
-    icon,
-    image,
-    className = "",
-    variant = "normal",
-    lightText = false,
-}: ServiceCardProps) {
-    const isTeal = variant === "teal";
-    const isLight = variant === "light";
-    const isPlain = variant === "plain";
 
+function ServiceCard({ service }: { service: Service }) {
     return (
-        <article
-            className={`
-                group
-                relative
-                h-full
-                min-h-[220px]
-                overflow-hidden
-                rounded-[14px]
-                ${isPlain
-                    ? "bg-[#ccefed]"
-                    : "bg-[#eef8f7]"
-                }
-                ${className}
-            `}
-        >
+        <article className="group overflow-hidden rounded-[18px] bg-white shadow-[0_8px_30px_rgba(0,56,59,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,56,59,0.10)]">
             {/* Image */}
-            {image && (
+            <div className="relative  aspect-[2.7/1] ">
                 <Image
-                    src={image}
-                    alt={title}
+                    src={service.image}
+                    alt={service.title}
                     fill
                     sizes="
-                        (max-width: 639px) 100vw,
+                        (max-width: 767px) 100vw,
                         (max-width: 1023px) 50vw,
-                        25vw
+                        33vw
                     "
-                    className="
-                        object-cover
-                        transition-transform
-                        duration-700
-                        ease-out
-                        group-hover:scale-105
-                    "
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-            )}
 
-            {/* Teal gradient - only left portion is shaded */}
-            {isTeal && (
-                <div
-                    className="
-                        absolute
-                        inset-0
-                        bg-gradient-to-r
-                        from-[#008f91]
-                        via-[#008f91]/80
-                        via-[48%]
-                        to-transparent
-                    "
-                />
-            )}
-
-            {/* Cancellations soft image shade */}
-            {isLight && (
-                <div
-                    className="
-                        absolute
-                        inset-0
-                        bg-gradient-to-r
-                        from-white/40
-                        via-white/15
-                        to-transparent
-                    "
-                />
-            )}
+                {/* Icon */}
+                <div className="absolute bottom-[-30] z-10 left-5  flex h-13 w-13 items-center justify-center rounded-[17px] border-5 border-white bg-[#e5faf7] text-[#159b9c] shadow-sm">
+                    {service.icon}
+                </div>
+            </div>
 
             {/* Content */}
-            <div
-                className="
-                    relative
-                    z-10
-                    flex
-                    h-full
-                    flex-col
-                    p-4
-                    sm:p-5
-                "
-            >
-                {/* Icon */}
-                <div
-                    className="
-                        flex
-                        h-7
-                        w-7
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-white
-                        text-[#159b9c]
-                    "
-                >
-                    {icon}
-                </div>
+            <div className="flex min-h-[178px] z-6 flex-col px-5 pb-5 pt-10">
+                <h3 className="text-[20px] font-bold leading-[1.15] tracking-light text-[#073452] sm:text-[21px]">
+                    {service.title}
+                </h3>
 
-                {/* Text */}
-                <div className="mt-2.5 max-w-[285px]">
-                    <h3
-                        className={`
-                            text-[30px]
-                            font-bold
-                            leading-[1.08]
-                            tracking-[-0.025em]
-                            sm:text-[18px]
-                            lg:text-[25px]
-                           ${isTeal || lightText
-                                ? "text-white"
-                                : "text-[#073452]"
-                            }
-                        `}
+                <p className="mt-2 max-w-97.5 text-[14px] font-medium leading-[1.55] text-[#7b8fa3] sm:text-[15px] md:text-base">
+                    {service.description}
+                </p>
+
+                {/* Learn More */}
+                <div className="mt-auto flex items-center gap-4 pt-3">
+                    <span className="text-[14px] font-bold text-[#159b9c]">
+                        Learn More
+                    </span>
+
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        className="
+                            h-10
+                            w-10
+                            rounded-full
+                            border-[#b9d2d8]
+                            bg-white
+                            text-[#159b9c]
+                            shadow-none
+                            transition-all
+                            duration-300
+                            hover:border-[#159b9c]
+                            hover:bg-[#159b9c]
+                            hover:text-white
+                            group-hover:translate-x-1
+                        "
+                        aria-label={`Learn more about ${service.title}`}
                     >
-                        {title}
-                    </h3>
-
-                    <p
-                        className={`
-                            mt-1.5
-                            max-w-[270px]
-                            text-[20px]
-                             font-medium
-                            leading-[1.25]
-                            sm:text-[10px]
-                            md:text-base
-                            ${isTeal || isLight || lightText
-                                ? "text-white"
-                                : "text-[#34546a]"
-                            }
-                        `}
-                    >
-                        {description}
-                    </p>
+                        <ArrowRight size={18} strokeWidth={2.2} />
+                    </Button>
                 </div>
-
-                {/* Arrow */}
-                <Button
-                    variant="outline"
-                    size="icon"
-                    className={`
-                        mt-auto
-                        h-7
-                        w-7
-                        rounded-full
-                        border
-                        bg-transparent
-                        p-0
-                        shadow-none
-                        transition-all
-                        duration-300
-                        group-hover:translate-x-1
-                        ${isTeal
-                            ? "border-white/60 text-white hover:bg-white hover:text-[#00383b]"
-                            : "border-[#8bb8bd] text-[#176878] hover:bg-[#159b9c] hover:text-white"
-                        }
-                    `}
-                    aria-label={`Learn more about ${title}`}
-                >
-                    <ArrowRight
-                        size={14}
-                        strokeWidth={2.2}
-                    />
-                </Button>
             </div>
         </article>
     );
@@ -252,288 +133,73 @@ function ServiceCard({
 
 export default function ServicesSection() {
     return (
-        <section
-            className="
-                w-full
-                bg-white
-                px-4
-                py-12
-                sm:px-6
-                sm:py-16
-                lg:px-8
-                lg:py-20
-            "
-        >
-            <div className="mx-auto w-full max-w-[1200px]">
+        <section className="relative overflow-hidden flex justify-center items-center bg-white px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+ 
+            <div className="relative  w-[90%] ">
 
-                {/* Header */}
-                <div className="mb-7 max-w-[650px] sm:mb-8">
-                    <p
-                        className="
-                            text-[10px]
-                            font-bold
-                            uppercase
-                            tracking-[0.16em]
-                            text-[#159b9c]
-                            sm:text-[11px]
-                        "
-                    >
-                        Services
-                    </p>
+                <div className="relative mb-9 lg:mb-10">
+                    <div>
+                        {/* Small Label */}
+                        <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#159b9c] sm:text-[12px]">
+                            Our Services
+                        </p>
 
-                    <div className="mt-2 flex items-start justify-between gap-4">
-                        <div>
-                            <h2
-                                className="
-                                    max-w-[620px]
-                                    text-[30px]
-                                    font-bold
-                                    leading-[1.08]
-                                    tracking-[-0.035em]
-                                    text-[#073452]
-                                    sm:text-[38px]
-                                    lg:text-[42px]
-                                "
-                            >
-                                Support for every step
-                                <br className="hidden sm:block" />
-                                {" "}of your journey.
-                            </h2>
+                        {/* Heading */}
+                        <h2 className="mt-3 max-w-[700px] text-[38px] font-bold leading-[1.05] tracking-[-0.045em] text-[#102d5b] sm:text-[48px] lg:text-[52px]">
+                            assistance for every step
+                            <br className="hidden sm:block" />
+                            of{" "}
+                            <span className="text-[#159b9c]">
+                                your journey.
+                            </span>
+                        </h2>
 
-                            <p
-                                className="
-                                    mt-3
-                                    max-w-[600px]
-                                    text-[12px]
-                                    leading-[1.5]
-                                    text-[#9aa9b1]
-                                    sm:text-[13px]
-                                "
-                            >
-                                Whether you're planning, mid-trip, or facing
-                                the unexpected, our specialists are ready to
-                                help with a range of travel needs.
-                            </p>
-                        </div>
+                        {/* Description */}
+                        <p className="mt-4 max-w-[690px] text-[15px] font-medium leading-[1.65] text-[#7d91aa] sm:text-[17px]">
+                            Whether you're planning a new trip, need to make
+                            changes, or facing unexpected issues, our travel
+                            specialists are ready to help.
+                        </p>
+                    </div>
+ 
 
-                        <div className="hidden shrink-0 sm:flex">
-                            <Button
-                                variant="ghost"
-                                size="icon"
-                                className="
-                                    h-10
-                                    w-10
-                                    rounded-full
-                                    text-[#159b9c]
-                                    hover:bg-[#e8f7f6]
-                                "
-                                aria-label="View all services"
-                            >
-                                <ArrowUpRight size={21} />
-                            </Button>
+                    <div className="mt-7 flex sm:absolute sm:right-0 sm:top-2 sm:mt-0">
+                        <div className="relative flex items-center gap-4 rounded-[20px] bg-white px-5 py-4 shadow-[0_12px_35px_rgba(0,56,59,0.08)] sm:min-w-[320px]">
+                            {/* Icon */}
+                            <div className="flex h-[58px] w-[58px] shrink-0 items-center justify-center rounded-full bg-[#e5faf7] text-[#159b9c]">
+                                <Headphones
+                                    size={30}
+                                    strokeWidth={2.1}
+                                />
+                            </div>
+
+                            {/* Text */}
+                            <div>
+                                <p className="text-[16px] font-bold leading-tight text-[#102d5b] sm:text-[17px]">
+                                    Real people. Real help.
+                                </p>
+
+                                <p className="mt-1 text-[12px] font-medium leading-[1.4] text-[#8091a8] sm:text-[13px]">
+                                    Talk to a travel specialist anytime.
+                                </p>
+                            </div>
                         </div>
                     </div>
+
+                     
                 </div>
 
                 {/* ========================= */}
-                {/* SERVICES GRID              */}
+                {/* SERVICES GRID */}
                 {/* ========================= */}
 
-                <div
-                    className="
-                        grid
-                        grid-cols-1
-                        gap-3
-
-                        md:grid-cols-2
-
-                         lg:grid-cols-[1.5fr_3fr]
-                        lg:grid-rows-[415px_162px]
-                    "
-                >
-                    {/* ================================= */}
-                    {/* LEFT - FLIGHT RESERVATIONS       */}
-                    {/* ================================= */}
-
-                    <ServiceCard
-                        title={services[0].title}
-                        description={services[0].description}
-                        icon={services[0].icon}
-                        image={services[0].image}
-                        variant="normal"
-                        lightText
-                        className="
-        min-h-[430px]
-        md:min-h-[430px]
-        lg:row-span-2
-        lg:min-h-0
-    "
-                    />
-
-                    {/* ================================= */}
-                    {/* RIGHT SIDE                         */}
-                    {/* ================================= */}
-
-                    <div
-                        className="
-                            grid
-                            grid-cols-1
-                            gap-3
-
-                            sm:grid-cols-2
-
-                            lg:grid-cols-6
-                            lg:grid-rows-[230px_162px]
-                        "
-                    >
-                        {/* Flight Changes */}
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    {services.map((service) => (
                         <ServiceCard
-                            title={services[1].title}
-                            description={services[1].description}
-                            icon={services[1].icon}
-                            image={services[1].image}
-                            variant="teal"
-                            className="
-                                min-h-[146px]
-
-                                lg:col-span-3
-                             "
+                            key={service.title}
+                            service={service}
                         />
-
-                        {/* Cancellations */}
-                        <ServiceCard
-                            title={services[2].title}
-                            description={services[2].description}
-                            icon={services[2].icon}
-                            image={services[2].image}
-                            variant="light"
-                            className="
-                                min-h-[146px]
-
-                                lg:col-span-3
-                             "
-                        />
-
-                        {/* Travel Planning */}
-                        <ServiceCard
-                            title={services[3].title}
-                            description={services[3].description}
-                            icon={services[3].icon}
-                            image={services[3].image}
-                            variant="normal"
-                            className="
-                                min-h-[350px]
-
-                                lg:col-span-2
-                             "
-                        />
-
-                        {/* Itinerary Help */}
-                        <div
-                            className="
-        relative
-        h-full
-        min-h-[350px]
-        overflow-hidden
-        rounded-[14px]
-        bg-[#ccefed]
-        lg:col-span-2
-    "
-                        >
-                            {/* Content */}
-                            <div
-                                className="
-            z-10
-            flex
-            h-full
-            flex-col
-            p-4
-            sm:p-5
-        "
-                            >
-                                {/* Icon */}
-                                <div
-                                    className="
-                flex
-                h-7
-                w-7
-                shrink-0
-                items-center
-                justify-center
-                rounded-full
-                bg-white
-                text-[#159b9c]
-            "
-                                >
-                                    <List size={17} strokeWidth={2.3} />
-                                </div>
-
-                                {/* Text */}
-                                <div className="mt-2.5 max-w-[285px]">
-                                    <h3
-                                        className="
-                    text-3xl
-                    font-bold
-                    md:text-[1.5rem]
-                    leading-[1.08]
-                    tracking-[-0.025em]
-                    text-[#073452]
-                "
-                                    >
-                                        Itinerary Help
-                                    </h3>
-
-                                    <p
-                                        className="
-                                            mt-1.5
-                                            max-w-[270px]
-                                            text-base
-                                            sm:text-[20px]
-                                            md:text-base
-                                            font-medium
-                                            leading-[1.25]
-                                            text-[#34546a]
-                                        "
-                                    >
-                                        Book the right flight at the right price — with expert
-                                        guidance and real-time support.
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Plane SVG */}
-                            <Image
-                                src="/images/plane.svg"
-                                alt=""
-                                width={140}
-                                height={100}
-                                className="
-            absolute
-            bottom-7
-            right-14
-            z-0
-            w-[150px]
-            object-contain
-            opacity-90
-        "
-                            />
-                        </div>
-
-                        {/* Travel Support */}
-                        <ServiceCard
-                            title={services[5].title}
-                            description={services[5].description}
-                            icon={services[5].icon}
-                            image={services[5].image}
-                            variant="teal"
-                            className="
-                                 min-h-[350px]
-
-
-                                lg:col-span-2
-                             "
-                        />
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>

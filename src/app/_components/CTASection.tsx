@@ -1,156 +1,272 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowUpRight, Phone, Plane } from "lucide-react";
 
 export default function CTASection() {
     return (
-        <section className="relative w-full overflow-hidden bg-[#002f47]">
-            {/* Background Image */}
+        <section className="w-full bg-[#f3fbfa] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
             <div
                 className="
-                    absolute
-                    inset-0
-                    bg-cover
-                    bg-center
-                    bg-no-repeat
-                "
-                style={{
-                    backgroundImage:
-                        "url('/images/flight.png')",
-                }}
-            />
-
-
-
-            {/* Subtle Gradient */}
-            <div
-                className="
-                    absolute
-                    inset-0
-                    bg-gradient-to-r
-                    from-[#002f47]/95
-                    via-[#002f47]/85
-                    to-[#002f47]/65
-                "
-            />
-
-            {/* Content */}
-            <div
-                className="
-                    relative
-                    z-10
                     mx-auto
-                    flex
-                    min-h-[360px]
+                    grid
                     w-full
                     max-w-[1200px]
-                    items-center
-                    justify-between
-                    px-5
-                    py-14
-                    sm:min-h-[380px]
-                    sm:px-8
-                    lg:min-h-[400px]
-                    lg:px-10
-                    lg:py-16
+                    overflow-hidden
+                    rounded-[28px]
+                    bg-[#00383b]
+                    lg:grid-cols-[1.1fr_0.9fr]
                 "
             >
-                <div className="max-w-[620px]">
-                    {/* Eyebrow */}
-                    <p
+                {/* LEFT CONTENT */}
+                <div
+                    className="
+                        relative
+                        flex
+                        min-h-[390px]
+                        flex-col
+                        justify-center
+                        overflow-hidden
+                        px-7
+                        py-12
+                        sm:px-10
+                        sm:py-14
+                        lg:min-h-[440px]
+                        lg:px-14
+                    "
+                >
+                    {/* Decorative circles */}
+                    <div
                         className="
-                            text-[11px]
-                            font-bold
-                            uppercase
-                            tracking-[0.18em]
-                            text-[#5bd2c7]
-                            sm:text-[12px]
+                            pointer-events-none
+                            absolute
+                            -left-24
+                            -top-24
+                            h-64
+                            w-64
+                            rounded-full
+                            border
+                            border-[#42d5c8]/15
                         "
-                    >
-                        Ready when you are
-                    </p>
+                    />
+
+                    <div
+                        className="
+                            pointer-events-none
+                            absolute
+                            -bottom-28
+                            -right-20
+                            h-72
+                            w-72
+                            rounded-full
+                            border
+                            border-[#42d5c8]/10
+                        "
+                    />
+
+                    {/* Small label */}
+                    <div className="relative z-10 flex items-center gap-2">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#18b9ad] text-white">
+                            <Plane
+                                size={15}
+                                strokeWidth={2.4}
+                                fill="currentColor"
+                            />
+                        </span>
+
+                        <span
+                            className="
+                                text-[11px]
+                                font-bold
+                                uppercase
+                                tracking-[0.18em]
+                                text-[#63dcd3]
+                                sm:text-[12px]
+                            "
+                        >
+                            Travel Assistance
+                        </span>
+                    </div>
 
                     {/* Heading */}
                     <h2
                         className="
-                            mt-3
-                            max-w-[600px]
-                            text-[34px]
+                            relative
+                            z-10
+                            mt-6
+                            max-w-[580px]
+                            text-[36px]
                             font-bold
                             leading-[1.05]
-                            tracking-[-0.035em]
+                            tracking-[-0.04em]
                             text-white
-                            sm:text-[42px]
-                            lg:text-[48px]
+                            sm:text-[46px]
+                            lg:text-[54px]
                         "
                     >
-                        Your next trip starts with
-                        <br className="hidden sm:block" />
-                        the right help.
+                        Wherever you're going,
+                        <span className="block text-[#55d8ce]">
+                            we're here to help.
+                        </span>
                     </h2>
 
                     {/* Description */}
                     <p
                         className="
-                            mt-4
-                            max-w-[540px]
+                            relative
+                            z-10
+                            mt-5
+                            max-w-[510px]
                             text-[15px]
                             font-medium
-                            leading-[1.6]
-                            text-white/85
-                            sm:text-[17px]
+                            leading-[1.65]
+                            text-white/70
+                            sm:text-[16px]
                         "
                     >
-                        Call 98765433210 and speak with a travel
-                        specialist today.
+                        Get real help from travel specialists for
+                        reservations, changes, cancellations, and
+                        everything in between.
                     </p>
-                </div>
-                {/* Actions */}
-                <div
-                    className="
-                            mt-7
-                            flex
-                            flex-col
-                            gap-3
-                            sm:flex-row
-                        "
-                >
-                    <Link
-                        href="tel:9876543210"
-                        className="
+
+                    {/* CTA */}
+                    <div className="relative z-10 mt-8 flex flex-wrap items-center gap-4">
+                        <Link
+                            href="tel:9876543210"
+                            className="
                                 inline-flex
-                                h-12
+                                h-13
                                 items-center
-                                justify-center
-                                gap-4
+                                gap-3
                                 rounded-full
                                 bg-[#18b9ad]
-                                px-7
-                                py-8
-                                text-[14px]
+                                px-6
+                                py-3
+                                text-[19px]
                                 font-bold
                                 text-white
                                 transition-all
                                 duration-300
-                                hover:bg-[#159f96]
-                                hover:shadow-lg
-                                sm:text-[15px]
-                                md:text-[30px]
+                                hover:bg-[#23cabe]
+                                hover:shadow-[0_12px_30px_rgba(24,185,173,0.25)]
                             "
+                        >
+                            <Phone
+                                size={18}
+                                strokeWidth={2.5}
+                            />
+
+                            <span>Call 9876543210</span>
+                        </Link>
+
+                        <Link
+                            href="#services"
+                            className="
+                                inline-flex
+                                h-13
+                                items-center
+                                gap-2
+                                rounded-full
+                                border
+                                border-white/20
+                                px-5
+                                py-3
+                                text-[18px]
+                                font-semibold
+                                text-white/85
+                                transition-all
+                                duration-300
+                                hover:border-[#55d8ce]
+                                hover:text-[#55d8ce]
+                            "
+                        >
+                            Explore Services
+
+                            <ArrowUpRight
+                                size={17}
+                                strokeWidth={2}
+                            />
+                        </Link>
+                    </div>
+                </div>
+
+                {/* RIGHT IMAGE */}
+                <div
+                    className="
+                        relative
+                        min-h-[300px]
+                        overflow-hidden
+                        sm:min-h-[360px]
+                        lg:min-h-[440px]
+                    "
+                >
+                    <Image
+                        src="/images/flight.png"
+                        alt="Flight travel"
+                        fill
+                        sizes="
+                            (max-width: 1023px) 100vw,
+                            45vw
+                        "
+                        className="
+                            object-cover
+                            transition-transform
+                            duration-700
+                            hover:scale-105
+                        "
+                    />
+
+                    {/* Image gradient */}
+                    <div
+                        className="
+                            absolute
+                            inset-0
+                            bg-gradient-to-r
+                            from-[#00383b]/50
+                            via-transparent
+                            to-transparent
+                        "
+                    />
+
+                    {/* Image badge */}
+                    <div
+                        className="
+                            absolute
+                            bottom-5
+                            left-5
+                            right-5
+                            flex
+                            items-center
+                            justify-between
+                            rounded-2xl
+                            border
+                            border-white/20
+                            bg-[#00383b]/65
+                            px-4
+                            py-3
+                            backdrop-blur-md
+                            sm:bottom-7
+                            sm:left-7
+                            sm:right-7
+                            sm:px-5
+                            sm:py-4
+                        "
                     >
-                        <Phone
-                            size={30}
-                            strokeWidth={2.5}
-                        />
+                        <div>
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#63dcd3]">
+                                Need assistance?
+                            </p>
 
-                        <span className="hidden md:flex">
-                           9876543210
+                            <p className="mt-1 text-[14px] font-semibold text-white sm:text-[15px]">
+                                Talk to a travel specialist
+                            </p>
+                        </div>
+
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#18b9ad] text-white">
+                            <Phone size={16} />
                         </span>
-                    </Link>
-
-                    
-
+                    </div>
                 </div>
             </div>
         </section>

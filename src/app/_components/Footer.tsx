@@ -1,7 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Plane } from "lucide-react";
+import {
+       Mail,
+    Phone,
+    Plane,
+ } from "lucide-react";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { FaYoutube } from "react-icons/fa";
+
+const quickLinks = [
+    {
+        label: "Services",
+        href: "#services",
+    },
+    {
+        label: "How It Works",
+        href: "#how-it-works",
+    },
+    {
+        label: "Why TravelConnect",
+        href: "#why-travelconnect",
+    },
+    {
+        label: "FAQs",
+        href: "#faqs",
+    },
+];
 
 const legalLinks = [
     {
@@ -20,154 +47,381 @@ const legalLinks = [
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-[#030b1b] text-white">
-            <div className="mx-auto w-full max-w-[1080px] px-5 py-12 sm:px-8 sm:py-14 lg:px-0 lg:py-14">
-
-                {/* Top */}
+        <footer className="w-full bg-white">
+            {/* Main Footer */}
+            <div
+                className="
+                    mx-auto
+                    w-full
+                    max-w-[1200px]
+                    px-5
+                    py-12
+                    sm:px-8
+                    sm:py-14
+                    lg:px-10
+                    lg:py-16
+                "
+            >
                 <div
                     className="
                         grid
                         grid-cols-1
                         gap-10
-                        md:grid-cols-[1fr_auto]
-                        md:gap-16
+                        sm:grid-cols-2
+                        lg:grid-cols-[1.3fr_1fr_1fr_1fr]
+                        lg:gap-10
                     "
                 >
                     {/* Brand */}
-                    <div className="max-w-[620px]">
+                    <div>
                         <Link
                             href="/"
-                            className="inline-flex items-center gap-3"
+                            className="
+                                inline-flex
+                                items-center
+                                gap-3
+                            "
                         >
                             <span
                                 className="
                                     flex
-                                    h-11
-                                    w-11
+                                    h-10
+                                    w-10
                                     items-center
                                     justify-center
-                                    rounded-[12px]
-                                    bg-[#079a91]
+                                    rounded-full
+                                    bg-[#159b9c]
                                     text-white
                                 "
                             >
                                 <Plane
-                                    size={21}
-                                    strokeWidth={2.6}
-                                    fill="currentColor"
+                                    size={19}
+                                    strokeWidth={2.4}
                                 />
                             </span>
 
                             <span
                                 className="
-                                    text-[20px]
+                                    text-[22px]
                                     font-bold
                                     tracking-[-0.03em]
-                                    text-white
-                                    sm:text-[21px]
+                                    text-[#073452]
                                 "
                             >
-                                Travelwebsite
+                                Travel Website
                             </span>
                         </Link>
 
-                        {/* Description */}
                         <p
                             className="
-                                mt-5
-                                max-w-[600px]
-                                text-[16px]
+                                mt-4
+                                max-w-[290px]
+                                text-[14px]
                                 font-medium
-                                leading-[1.45]
-                                text-[#91a9c4]
+                                leading-[1.6]
+                                text-[#718b9b]
+                                sm:text-[15px]
+                            "
+                        >
+                            Real people. Expert support.
+                            Better journeys.
+                        </p>
+
+                        {/* Social Icons */}
+                        <div className="mt-6 flex items-center gap-2.5">
+                            <SocialLink
+                                href="#"
+                                label="Facebook"
+                                icon={<FaFacebook size={16} />}
+                            />
+
+                            <SocialLink
+                                href="#"
+                                label="Instagram"
+                                icon={<FaInstagram size={16} />}
+                            />
+
+                            <SocialLink
+                                href="#"
+                                label="LinkedIn"
+                                icon={<IoLogoLinkedin size={16} />}
+                            />
+
+                            <SocialLink
+                                href="#"
+                                label="YouTube"
+                                icon={<FaYoutube size={16} />}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Quick Links */}
+                    <FooterColumn
+                        title="Quick Links"
+                        links={quickLinks}
+                    />
+
+                    {/* Legal */}
+                    <FooterColumn
+                        title="Legal"
+                        links={legalLinks}
+                    />
+
+                    {/* Contact */}
+                    <div>
+                        <h3
+                            className="
+                                text-[16px]
+                                font-bold
+                                text-[#073452]
                                 sm:text-[17px]
                             "
                         >
-                            Travel assistance services websiteing you with
-                            specialists for flight reservations, changes,
-                            cancellations, and travel planning.
-                        </p>
+                            Contact
+                        </h3>
 
-                        {/* Phone */}
                         <Link
-                            href="tel:+918446950263"
+                            href="tel:8445950263"
                             className="
                                 mt-5
-                                inline-flex
+                                flex
                                 items-center
-                                gap-2
-                                text-[16px]
-                                font-semibold
-                                text-[#42ddd0]
-                                underline
-                                underline-offset-2
+                                gap-3
+                                text-[15px]
+                                font-bold
+                                text-[#073452]
                                 transition-colors
-                                hover:text-[#70eee4]
-                                sm:text-[20px]
-                                md:text-[25px]
+                                hover:text-[#159b9c]
+                                sm:text-[16px]
                             "
                         >
-                            <Phone
-                                size={2}
-                                strokeWidth={2.5}
-                                fill="currentColor"
-                            />
-
-                            <span>(844) 595-0263</span>
-                        </Link>
-                    </div>
-
-                    {/* Legal */}
-                    <div
-                        className="
-                            flex
-                            flex-col
-                            gap-4
-                            md:min-w-[175px]
-                        "
-                    >
-                        {legalLinks.map((link) => (
-                            <Link
-                                key={link.label}
-                                href={link.href}
+                            <span
                                 className="
-                                    text-[16px]
-                                    font-medium
-                                    text-[#d8dfeb]
-                                    transition-colors
-                                    hover:text-[#42ddd0]
-                                    sm:text-[17px]
+                                    flex
+                                    h-9
+                                    w-9
+                                    shrink-0
+                                    items-center
+                                    justify-center
+                                    rounded-full
+                                    bg-[#e8f7f6]
+                                    text-[#159b9c]
                                 "
                             >
-                                {link.label}
-                            </Link>
-                        ))}
+                                <Phone size={16} />
+                            </span>
+
+                            <span>98765433210</span>
+                        </Link>
+
+                        <p
+                            className="
+                                ml-12
+                                mt-1
+                                text-[12px]
+                                font-medium
+                                text-[#8ba0ac]
+                                sm:text-[13px]
+                            "
+                        >
+                            Mon - Sun, 24/7
+                        </p>
+
+                        {/* Brand Badge */}
+                        <div
+                            className="
+                                mt-6
+                                flex
+                                max-w-[240px]
+                                items-center
+                                gap-3
+                                rounded-full
+                                bg-[#e7f8f6]
+                                px-4
+                                py-3
+                            "
+                        >
+                            <span
+                                className="
+                                    flex
+                                    h-8
+                                    w-8
+                                    shrink-0
+                                    items-center
+                                    justify-center
+                                    rounded-full
+                                    bg-[#159b9c]
+                                    text-white
+                                "
+                            >
+                                <Mail size={14} />
+                            </span>
+
+                            <div>
+                                <p
+                                    className="
+                                        text-[13px]
+                                        font-bold
+                                        text-[#073452]
+                                    "
+                                >
+                                   Travel Website
+
+                                </p>
+
+                                <p
+                                    className="
+                                        mt-0.5
+                                        text-[10px]
+                                        font-medium
+                                        text-[#7a929e]
+                                    "
+                                >
+                                    Your journey, Our priority.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                {/* Divider */}
-                <div className="mt-9 h-px w-full bg-[#1c2a3e]" />
-
-                {/* Disclaimer */}
-                <div className="pt-6">
+            {/* Bottom Bar */}
+            <div className="border-t border-[#e7eeee]">
+                <div
+                    className="
+                        mx-auto
+                        flex
+                        w-full
+                        max-w-[1200px]
+                        flex-col
+                        gap-3
+                        px-5
+                        py-5
+                        sm:px-8
+                        lg:flex-row
+                        lg:items-center
+                        lg:justify-between
+                        lg:px-10
+                    "
+                >
                     <p
                         className="
-                            max-w-[1080px]
-                            text-[13px]
+                            text-[12px]
                             font-medium
-                            leading-[1.7]
-                            text-[#7290ad]
-                            sm:text-[14px]
+                            text-[#8ba0ac]
+                            sm:text-[13px]
                         "
                     >
-                        © 2026 Travel Website. All rights reserved.
-                        Travelwebsite is an independent travel assistance
-                        service and is not affiliated with, endorsed by, or
-                        sponsored by any airline, hotel, or travel provider.
-                        We do not sell tickets directly.
+                        © 2026 TravelConnect. All rights reserved.
+                    </p>
+
+                    <p
+                        className="
+                            text-[12px]
+                            font-medium
+                            text-[#8ba0ac]
+                            sm:text-[13px]
+                        "
+                    >
+                        Travel smarter. With people who care.
                     </p>
                 </div>
             </div>
         </footer>
     );
 }
+
+/* --------------------------------
+   Footer Column
+-------------------------------- */
+
+interface FooterColumnProps {
+    title: string;
+    links: {
+        label: string;
+        href: string;
+    }[];
+}
+
+function FooterColumn({
+    title,
+    links,
+}: FooterColumnProps) {
+    return (
+        <div>
+            <h3
+                className="
+                    text-[16px]
+                    font-bold
+                    text-[#073452]
+                    sm:text-[17px]
+                "
+            >
+                {title}
+            </h3>
+
+            <ul className="mt-5 space-y-3">
+                {links.map((link) => (
+                    <li key={link.label}>
+                        <Link
+                            href={link.href}
+                            className="
+                                text-[14px]
+                                font-medium
+                                text-[#718b9b]
+                                transition-colors
+                                hover:text-[#159b9c]
+                                sm:text-[15px]
+                            "
+                        >
+                            {link.label}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+/* --------------------------------
+   Social Link
+-------------------------------- */
+
+interface SocialLinkProps {
+    href: string;
+    label: string;
+    icon: React.ReactNode;
+}
+
+function SocialLink({
+    href,
+    label,
+    icon,
+}: SocialLinkProps) {
+    return (
+        <Link
+            href={href}
+            aria-label={label}
+            className="
+                flex
+                h-9
+                w-9
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-[#dce8e9]
+                text-[#486477]
+                transition-all
+                duration-300
+                hover:border-[#159b9c]
+                hover:bg-[#159b9c]
+                hover:text-white
+            "
+        >
+            {icon}
+        </Link>
+    );
+}
+
+ 
