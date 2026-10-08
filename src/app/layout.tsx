@@ -13,7 +13,7 @@ const geist = Geist({
 });
 
 const SITE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://vuelofare.com  ";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://vuelofare.com";
 
 const SITE_NAME = "vuelofare";
 
