@@ -623,7 +623,7 @@ export const airlinePolicyContent: Record<
             "Understand cabin baggage, checked baggage, weight limits, size restrictions, excess baggage, and restricted items before you head to the airport.",
 
         heroImage:
-            "https://images.unsplash.com/photo-1553531889-56a2a6d5f8a7?auto=format&fit=crop&w=1400&q=85",
+            "https://images.unsplash.com/photo-1632165061207-81a8a3baee47?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
         overviewImage:
             "https://images.unsplash.com/photo-1581553680321-4fffae59fccd?auto=format&fit=crop&w=1000&q=85",

@@ -12,10 +12,7 @@ import { IoLogoLinkedin } from "react-icons/io5";
 import { FaYoutube } from "react-icons/fa";
 
 const quickLinks = [
-    {
-        label: "Services",
-        href: "#services",
-    },
+   
     {
         label: "How It Works",
         href: "#how-it-works",
@@ -108,7 +105,7 @@ export default function Footer() {
                                     text-[#073452]
                                 "
                             >
-                                Travel Website
+                                Vuelofare
                             </span>
                         </Link>
 
@@ -181,7 +178,7 @@ export default function Footer() {
                         </h3>
 
                         <Link
-                            href="tel:8445950263"
+                            href="tel:8778810087"
                             className="
                                 mt-5
                                 flex
@@ -211,7 +208,7 @@ export default function Footer() {
                                 <Phone size={16} />
                             </span>
 
-                            <span>98765433210</span>
+                            <span className="text-2xl">8778810087</span>
                         </Link>
 
                         <p
@@ -263,10 +260,10 @@ export default function Footer() {
                                         text-[13px]
                                         font-bold
                                         text-[#073452]
+                                        md:text-base
                                     "
                                 >
-                                   Travel Website
-
+                                 Vuelofare 
                                 </p>
 
                                 <p

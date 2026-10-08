@@ -29,15 +29,13 @@ export default function HeroSection() {
 
                     {/* Description */}
                     <p className="mt-5 max-w-[470px] text-[14px] leading-[1.3] text-[#658399] sm:text-[15px] md:text-[1.1rem]">
-                        From flight changes to complex itineraries, our travel
-                        specialists are here to make your journey smoother,
-                        safer and stress-free.
+                        From changing flights to planning complicated trips, our specialists help you sort out the details and travel with confidence.
                     </p>
 
                     {/* CTA */}
                     <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                        <Link
-                            href="#contact"
+                        <a
+                            href="tel:+18778810087"
                             className="flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-[#079a91] px-6 text-sm font-bold text-white shadow-sm transition-all hover:bg-[#078a82] hover:shadow-md"
                         >
                             <Phone
@@ -48,7 +46,7 @@ export default function HeroSection() {
                             Talk to a Specialist
 
                             <ArrowRight className="h-4 w-4" />
-                        </Link>
+                        </a>
 
                         <Link
                             href="#services"
@@ -128,19 +126,19 @@ export default function HeroSection() {
                 {/* Right Image */}
                 <div className="relative mx-auto flex min-h-[330px] w-full max-w-[560px] items-center justify-center sm:min-h-[390px] md:min-h-[420px]">
                     {/* Background Shape */}
- 
+
                     {/* Circle */}
- 
+
                     {/* Image */}
-                         <Image
-                            src="/images/heroImage.png"
-                            alt="Traveler at an airport"
-                            fill
-                            priority
-                            sizes="(max-width: 768px) 90vw, 50vw"
-                            className="object-cover"
-                        />
- 
+                    <Image
+                        src="/images/heroImage.png"
+                        alt="Traveler at an airport"
+                        fill
+                        priority
+                        sizes="(max-width: 768px) 90vw, 50vw"
+                        className="object-cover"
+                    />
+
                     {/* Specialist Card */}
                     <div className="absolute left-0 top-[6%] z-20 flex items-center gap-2 rounded-xl bg-white px-3 py-2.5 shadow-[0_8px_30px_rgba(20,80,90,0.12)] sm:left-[1%] md:left-[-3%]">
                         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e3f6f5]">

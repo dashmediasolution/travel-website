@@ -68,152 +68,68 @@ export default function Navbar() {
                         </svg>
                     </div>
 
-                    <span className="hidden text-[19px] font-bold tracking-[-0.4px] text-[#073d5b] sm:flex">
-                        Travel Website
+                    <span className="hidden text-[19px] font-bold tracking-[-0.4px] text-[#073d5b] sm:flex md:text-3xl">
+                        Vuelofare
                     </span>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden items-center gap-8 md:flex">
-
-                    {/* Flights */}
-                    <Link
-                        href="/flights"
-                        className="text-sm font-semibold text-[#244e63] transition-colors hover:text-[#129c98]"
-                    >
-                        Flights
-                    </Link>
-
-                    {/* Airline Policy Dropdown */}
-                    <div
-                        className="relative"
-                        onMouseEnter={() => setPolicyOpen(true)}
-                        onMouseLeave={() => setPolicyOpen(false)}
-                    >
-                        <button
-                            type="button"
-                            onClick={() => setPolicyOpen(!policyOpen)}
-                            className="flex items-center gap-1.5 text-sm font-semibold text-[#244e63] transition-colors hover:text-[#129c98]"
-                        >
-                            Airline Policy
-                            <ChevronDown
-                                className={`h-4 w-4 transition-transform duration-200 ${policyOpen ? "rotate-180" : ""
-                                    }`}
-                            />
-                        </button>
-
-                        {/* Dropdown */}
-                        <div
-                            className={`
-                                absolute left-1/2 top-full z-50
-                                w-[270px]
-                                -translate-x-1/2
-                                pt-4
-                                transition-all duration-200
-                                ${policyOpen
-                                    ? "visible translate-y-0 opacity-100"
-                                    : "invisible -translate-y-2 opacity-0"
-                                }
-                            `}
-                        >
-                            <div className="overflow-hidden rounded-[18px] border border-slate-100 bg-white p-2 shadow-[0_20px_50px_rgba(0,56,59,0.12)]">
-
-                                <div className="px-4 pb-2 pt-3">
-                                    <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-[#159b9c] md:text-base">
-                                        Airline Policies
-                                    </p>
-
-                                    <p className="mt-1 text-[11px] font-medium text-[#8a9aaa] md:text-sm">
-                                        Know the rules before you fly
-                                    </p>
-                                </div>
-
-                                {airlinePolicies.map((policy) => (
-                                    <Link
-                                        key={policy.href}
-                                        href={policy.href}
-                                        onClick={() => setPolicyOpen(false)}
-                                        className="group flex items-center justify-between rounded-[12px] px-4 py-3 transition-colors hover:bg-[#eefaf9]"
-                                    >
-                                        <span className="text-[13px] font-semibold text-[#244e63] md:text-base group-hover:text-[#129c98]">
-                                            {policy.title}
-                                        </span>
-
-                                        <span className="text-[#b5c9cc] transition-transform group-hover:translate-x-1 group-hover:text-[#129c98]">
-                                            →
-                                        </span>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Deals */}
-                    <Link
-                        href="/deals"
-                        className="text-sm font-semibold text-[#244e63] transition-colors hover:text-[#129c98]"
-                    >
-                        Deals
-                    </Link>
-                </nav>
+              
 
                 {/* Desktop CTA */}
-                <Button
+                <Link
+                    href="tel:8778810087"
                     className="
-                        hidden
-                        cursor-pointer
-                        rounded-full
-                        bg-[#079a91]
-                        px-5
-                        py-5
-                        text-sm
-                        font-bold
-                        text-white
-                        hover:bg-[#078a82]
-                        hover:text-white
-                        md:flex
-                    "
+        hidden
+        items-center
+        gap-2
+        rounded-full
+        bg-[#079a91]
+        px-5
+        py-2.5
+        text-base
+         font-bold
+        text-white
+        transition-colors
+        hover:bg-[#078a82]
+        md:flex
+    "
                 >
-                    <Link
-                        href="tel:+919876543210"
-                        className="flex items-center gap-2"
-                    >
-                        <Phone
-                            className="h-3.5 w-3.5"
-                            fill="currentColor"
-                        />
-                        +91 9876543210
-                    </Link>
-                </Button>
+                    <Phone
+                        className="h-3.5 w-3.5"
+                        fill="currentColor"
+                    />
+                    8778810087
+                </Link>
 
                 {/* Mobile */}
                 <div className="flex items-center gap-2 md:hidden">
 
                     {/* Talk to us */}
-                    <Button
-                        size="sm"
+                    <Link
+                        href="tel:+18778810087"
                         className="
+                            hidden
+                            items-center
+                            gap-2
                             rounded-full
                             bg-[#079a91]
-                            px-3.5
-                            text-xs
+                            px-5
+                            py-3.5
+                            text-sm
                             font-bold
                             text-white
+                            transition-colors
                             hover:bg-[#078a82]
-                            hover:text-white
+                            md:flex
                         "
                     >
-                        <Link
-                            href="tel:+919876543210"
-                            className="flex items-center gap-2"
-                        >
-                            <Phone
-                                className="h-4 w-4"
-                                fill="currentColor"
-                            />
-                            Talk to us
-                        </Link>
-                    </Button>
+                        <Phone
+                            className="h-3.5 w-3.5"
+                            fill="currentColor"
+                        />
+                        8778810087
+                    </Link>
 
                     {/* Mobile Menu */}
                     <Sheet
@@ -240,7 +156,7 @@ export default function Navbar() {
                         >
                             <SheetHeader>
                                 <SheetTitle className="text-left text-[#073d5b]">
-                                    Travel Website
+                                    Vuelofare
                                 </SheetTitle>
                             </SheetHeader>
 
@@ -290,8 +206,8 @@ export default function Navbar() {
 
                                         <ChevronDown
                                             className={`h-4 w-4 transition-transform ${policyOpen
-                                                    ? "rotate-180"
-                                                    : ""
+                                                ? "rotate-180"
+                                                : ""
                                                 }`}
                                         />
                                     </button>
@@ -352,7 +268,7 @@ export default function Navbar() {
 
                                 {/* Phone */}
                                 <Link
-                                    href="tel:+919876543210"
+                                    href="tel:8778810087"
                                     onClick={() => setIsOpen(false)}
                                     className="
                                         flex
@@ -373,7 +289,7 @@ export default function Navbar() {
                                         fill="currentColor"
                                     />
 
-                                    +91 9876543210
+                                    8778810087
                                 </Link>
                             </nav>
                         </SheetContent>

@@ -20,36 +20,35 @@ import { Button } from "@/components/ui/button";
 const features = [
     {
         icon: Headphones,
-        title: "Expert Travel Specialists",
-        description: "Real people with real travel experience — not bots.",
+        title: "Talk to a Travel Expert",
+        description: "Get guidance from a real travel specialist.",
     },
     {
         icon: Clock3,
-        title: "24/7 Assistance",
-        description: "Get help anytime, from anywhere.",
+        title: "Help When You Need It",
+        description: "Get travel assistance whenever you need it.",
     },
     {
         icon: Zap,
-        title: "Fast & Convenient",
-        description: "Quick solutions for life's travel surprises.",
+        title: "Simple, Straightforward Help",
+        description: "Clear help for bookings and travel changes.",
     },
     {
         icon: Users,
-        title: "Personalized Solutions",
-        description: "Tailored assistance for your unique needs.",
+        title: "Guidance for Your Trip",
+        description: "Find options that work for your plans.",
     },
     {
         icon: Tag,
-        title: "Best Rates & Offers",
-        description: "Exclusive deals and competitive pricing.",
+        title: "Travel Options That Fit",
+        description: "Explore options that suit your journey.",
     },
     {
         icon: ShieldCheck,
-        title: "Peace of Mind",
-        description: "Travel with confidence. We've got your back.",
+        title: "Support Beyond Booking",
+        description: "We're here to help before and after you book.",
     },
 ];
-
 export default function WhyChooseUs() {
     return (
         <section className="w-full bg-[#effafa] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
@@ -95,7 +94,7 @@ export default function WhyChooseUs() {
                         >
                             Why Choose
                             <br />
-                            Travel Website?
+                            Vuelofare?
                         </h2>
 
                         <p
@@ -109,9 +108,7 @@ export default function WhyChooseUs() {
                                 sm:text-[14px]
                             "
                         >
-                            More than just a travel service — we're your
-                            travel partners, committed to making every
-                            journey easier, safer and more enjoyable.
+                           We make travel simpler by helping you make confident choices, handle the details, and enjoy the journey with less hassle.
                         </p>
 
                         <Button
@@ -133,13 +130,13 @@ export default function WhyChooseUs() {
                                 sm:text-[13px]
                             "
                         >
-                            <Link href="tel:+918446950263" className="flex gap-3 text-base">
+                            <Link href="tel:8778810087" className="flex gap-3 text-base">
                                 <Phone
                                     className="h-3.5 w-3.5"
                                     fill="currentColor"
                                 />
 
-                                Call Now (844) 595-0263
+                                Call Now 8778810087
 
                                 <ArrowRight className="h-3.5 w-3.5" />
                             </Link>

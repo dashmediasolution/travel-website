@@ -49,7 +49,7 @@ export default async function AirlinePolicyPage({ params }: PageProps) {
                         href="/"
                         className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#159b9c] px-7 py-4 text-base font-bold text-white transition hover:bg-[#078a82]"
                     >
-                        Back to Home
+                      `  Back to Home`
                         <ArrowRight size={18} />
                     </Link>
                 </div>

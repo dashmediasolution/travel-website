@@ -26,8 +26,8 @@ interface Deal {
     includes: string[];
 }
 
-const PHONE_NUMBER = "+919876543210";
-const DISPLAY_PHONE = "+91 9876543210";
+const PHONE_NUMBER = "8778810087";
+const DISPLAY_PHONE = "8778810087";
 
 const deals: Deal[] = [
     {

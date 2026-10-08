@@ -24,8 +24,8 @@ import {
     XCircle,
 } from "lucide-react";
 
-const PHONE_NUMBER = "+919876543210";
-const DISPLAY_PHONE = "+91 9876543210";
+const PHONE_NUMBER = "87788100870";
+const DISPLAY_PHONE = "8778810087";
 
 const usaFlights = [
     {
@@ -667,7 +667,7 @@ export default function FlightsPage() {
                             Whether you are flying to New York, Chicago,
                             Mumbai or somewhere else, speak with our team for
                             flight booking and information.
-                        </p>
+                        </p>  n 
 
                         <a
                             href={`tel:${PHONE_NUMBER}`}
