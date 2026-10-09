@@ -10,7 +10,7 @@ const geist = Geist({
     subsets: ["latin"],
     display: "swap",
 });
-
+import MobileCallButton from "./_components/MobileCallButton";
 const SITE_URL =
     process.env.NEXT_PUBLIC_SITE_URL || "https://vuelofare.com";
 
@@ -120,7 +120,7 @@ export default function RootLayout({
                 className={`${geist.variable} min-h-screen bg-white antialiased`}
             >
  
-                <main className="min-h-screen">{children}</main>
+                <main className="min-h-screen">{children} <MobileCallButton /></main>
 
  
                 <Footer />

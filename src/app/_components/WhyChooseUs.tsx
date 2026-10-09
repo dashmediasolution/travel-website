@@ -51,7 +51,7 @@ const features = [
 ];
 export default function WhyChooseUs() {
     return (
-        <section className="w-full bg-[#effafa] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 mb-68 md:mb-40">
+        <section className="w-full bg-[#effafa] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 ">
             <div className="mx-auto w-full max-w-[1200px]">
                 <div
                     className="

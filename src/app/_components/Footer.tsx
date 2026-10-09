@@ -1,154 +1,123 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import Image from "next/image";
 
 const legalLinks = [
-{ label: "Privacy Policy", href: "/#" },
-{ label: "Terms & Conditions", href: "/#" },
-{ label: "Disclaimer", href: "/#" },
+    { label: "Privacy Policy", href: "/#" },
+    { label: "Terms & Conditions", href: "/#" },
+    { label: "Disclaimer", href: "/#" },
 ];
 
 export default function Footer() {
-const [isVisible, setIsVisible] = useState(false);
+    return (<footer className="relative w-full mb:15 md:mb:0 bg-[#F9FCFC] text-[#15546A] shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+        {/* Main Footer */} <div className="mx-auto w-full max-w-[1200px] px-3 py-4 sm:px-8 sm:py-5 lg:px-10"> <div className="grid grid-cols-2 gap-x-3 gap-y-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-[1.2fr_1.5fr_1fr] lg:items-center lg:gap-8">
+            {/* Brand */} <div className="col-span-2 min-w-0 lg:col-span-1"> <Link href="/" className="inline-flex items-center"> <Image
+                src="/images/vuelofarelogo.svg"
+                alt="Vuelofare"
+                width={120}
+                height={35}
+                className="h-auto w-[105px] sm:w-[120px]"
+            /> </Link>
 
- useEffect(() => {
-    const handleScroll = () => {
-        setIsVisible(window.scrollY > 150);
-    };
+                <p className="mt-1.5 max-w-[260px] text-[13px] font-medium leading-5 text-[#718b9b]">
+                    Real people. Expert support. Better journeys.
+                </p>
+            </div>
 
-    window.addEventListener("scroll", handleScroll, {
-        passive: true,
-    });
+            {/* Address */}
+            <div className="min-w-0">
+                <h3 className="text-[15px] font-bold text-[#073452]">
+                    Our Address
+                </h3>
 
-    handleScroll();
+                <p className="mt-1.5 text-[13px] font-medium leading-[1.5] text-[#718b9b] sm:leading-5">
+                    B-16 S/F R/SIDE, Janakpuri Community Centre,
+                    Janakpuri, New Delhi – 110058
+                </p>
 
-    return () => {
-        window.removeEventListener("scroll", handleScroll);
-    };
-}, []);
+                <p className="mt-1 text-[12px] font-medium leading-4 text-[#718b9b]">
+                    The Unit of JS Enterprises
+                </p>
+            </div>
 
-return (
-    <footer
-        aria-hidden={!isVisible}
-        className={`fixed inset-x-0 bottom-0 z-50 max-h-[80vh] w-full overflow-y-auto bg-[#F9FCFC] text-[#15546A] shadow-[0_-4px_20px_rgba(0,0,0,0.08)] transition-all duration-300 ease-in-out ${
-            isVisible
-                ? "translate-y-0 opacity-100"
-                : "pointer-events-none translate-y-full opacity-0"
-        }`}
-    >
-        {/* Main Footer */}
-        <div className="mx-auto w-full max-w-[1200px] px-3 py-3 sm:px-8 sm:py-4 lg:px-10">
-            <div className="grid grid-cols-2 gap-x-3 gap-y-3 sm:grid-cols-2 sm:gap-5 lg:grid-cols-[1.2fr_1.5fr_1fr] lg:items-center lg:gap-8">
-                {/* Brand */}
-                <div className="col-span-2 min-w-0 lg:col-span-1">
-                    <Link href="/" className="inline-flex items-center">
-                        <Image
-                            src="/images/vuelofarelogo.svg"
-                            alt="Vuelofare"
-                            width={120}
-                            height={35}
-                            className="h-auto w-[105px] sm:w-[120px]"
-                        />
-                    </Link>
+            {/* Contact - Mobile and Tablet */}
+            <div className="min-w-0 lg:hidden">
+                <h3 className="text-[15px] font-bold text-[#073452]">
+                    Contact
+                </h3>
 
-                    <p className="mt-1.5 max-w-[260px] text-[13px] font-medium leading-5 text-[#718b9b]">
-                        Real people. Expert support. Better journeys.
-                    </p>
-                </div>
+                <Link
+                    href="tel:8778810087"
+                    className="mt-2 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#073452] transition-colors hover:text-[#159b9c]"
+                >
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e8f7f6] text-[#159b9c]">
+                        <Phone size={14} />
+                    </span>
 
-                {/* Address */}
-                <div className="min-w-0">
+                    <span className="break-words">
+                        (877) 881-0087
+                    </span>
+                </Link>
+
+                <p className="mt-1 text-[12px] font-medium leading-4 text-[#8ba0ac]">
+                    Mon - Sun, 24/7
+                </p>
+            </div>
+
+            {/* Legal and Contact - Desktop */}
+            <div className="hidden grid-cols-2 gap-10 md:w-[400px] lg:grid">
+                {/* Legal */}
+                <div>
                     <h3 className="text-[15px] font-bold text-[#073452]">
-                        Our Address
+                        Legal
                     </h3>
 
-                    <p className="mt-1.5 text-[13px] font-medium leading-[1.5] text-[#718b9b] sm:leading-5">
-                        B-16 S/F R/SIDE, Janakpuri Community Centre,
-                        Janakpuri, New Delhi – 110058
-                    </p>
-
-                    <p className="mt-1 text-[12px] font-medium leading-4 text-[#718b9b]">
-                        The Unit of JS Enterprises
-                    </p>
+                    <ul className="mt-3 space-y-2">
+                        {legalLinks.map((link) => (
+                            <li key={link.label}>
+                                <Link
+                                    href={link.href}
+                                    className="text-[13px] font-medium text-[#718b9b] transition-colors hover:text-[#159b9c]"
+                                >
+                                    {link.label}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
-                {/* Contact - Mobile and Tablet */}
-                <div className="min-w-0 lg:hidden">
+                {/* Contact */}
+                <div>
                     <h3 className="text-[15px] font-bold text-[#073452]">
                         Contact
                     </h3>
 
                     <Link
                         href="tel:8778810087"
-                        className="mt-2 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#073452] transition-colors hover:text-[#159b9c]"
+                        className="mt-3 inline-flex items-center gap-2 text-[13px] font-semibold text-[#073452] transition-colors hover:text-[#159b9c]"
                     >
                         <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e8f7f6] text-[#159b9c]">
                             <Phone size={14} />
                         </span>
 
-                        <span className="break-words">
+                        <span className="whitespace-nowrap text-lg">
                             (877) 881-0087
                         </span>
                     </Link>
 
-                    <p className="mt-1 text-[12px] font-medium leading-4 text-[#8ba0ac]">
+                    <p className="mt-1 text-xs font-medium text-[#8ba0ac]">
                         Mon - Sun, 24/7
                     </p>
                 </div>
-
-                {/* Legal and Contact - Desktop */}
-                <div className="hidden grid-cols-2 gap-10 md:w-[400px] lg:grid">
-                    <div>
-                        <h3 className="text-[15px] font-bold text-[#073452]">
-                            Legal
-                        </h3>
-
-                        <ul className="mt-3 space-y-2">
-                            {legalLinks.map((link) => (
-                                <li key={link.label}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-[13px] font-medium text-[#718b9b] transition-colors hover:text-[#159b9c]"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 className="text-[15px] font-bold text-[#073452]">
-                            Contact
-                        </h3>
-
-                        <Link
-                            href="tel:8778810087"
-                            className="mt-3 inline-flex items-center gap-2 text-[13px] font-semibold text-[#073452] transition-colors hover:text-[#159b9c]"
-                        >
-                            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e8f7f6] text-[#159b9c]">
-                                <Phone size={14} />
-                            </span>
-
-                            <span className="whitespace-nowrap text-lg">
-                                (877) 881-0087
-                            </span>
-                        </Link>
-
-                        <p className="mt-1 text-xs font-medium text-[#8ba0ac]">
-                            Mon - Sun, 24/7
-                        </p>
-                    </div>
-                </div>
             </div>
+        </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-[#e7eeee]">
-            <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-1 px-3 py-2 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
+            <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-1 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
                 <p className="text-[11px] font-medium text-[#8ba0ac]">
                     © 2026 Vuelofare. All rights reserved.
                 </p>
@@ -159,6 +128,6 @@ return (
             </div>
         </div>
     </footer>
-);
- 
+    );
+
 }
