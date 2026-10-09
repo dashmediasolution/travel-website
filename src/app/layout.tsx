@@ -11,7 +11,7 @@ const geist = Geist({
     display: "swap",
 });
 import MobileCallButton from "./_components/MobileCallButton";
-const SITE_URL =
+ const SITE_URL =
     process.env.NEXT_PUBLIC_SITE_URL || "https://vuelofare.com";
 
 const SITE_NAME = "vuelofare";
@@ -119,7 +119,7 @@ export default function RootLayout({
             <body
                 className={`${geist.variable} min-h-screen bg-white antialiased`}
             >
- 
+                <Navbar/>
                 <main className="min-h-screen">{children} <MobileCallButton /></main>
 
  
