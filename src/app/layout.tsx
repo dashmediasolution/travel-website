@@ -119,8 +119,7 @@ export default function RootLayout({
             <body
                 className={`${geist.variable} min-h-screen bg-white antialiased`}
             >
-                <Navbar />
-
+ 
                 <main className="min-h-screen">{children}</main>
 
  
