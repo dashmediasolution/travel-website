@@ -136,7 +136,7 @@ export default function WhyChooseUs() {
                                     fill="currentColor"
                                 />
 
-                                Call Now 8778810087
+                              Call Now (877) 881-0087
 
                                 <ArrowRight className="h-3.5 w-3.5" />
                             </Link>
