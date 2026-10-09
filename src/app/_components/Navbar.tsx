@@ -57,14 +57,11 @@ export default function Navbar() {
                         alt="Vuelofare"
                         width={140}
                         height={40}
-                        className="hidden h-auto w-[110px] sm:flex md:w-[140px]"
+                        className="h-auto w-[100px] sm:flex md:w-[140px]"
                     />
                 </Link>
 
-                {/* Desktop Navigation */}
-
-
-                {/* Desktop CTA */}
+             
                 <Link
                     href="tel:8778810087"
                     className="
