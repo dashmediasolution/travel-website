@@ -157,7 +157,7 @@ export default function CTASection() {
                                 strokeWidth={2.5}
                             />
 
-                            <span>Call 8778810087</span>
+                            <span>Call (877) 881-0087</span>
                         </Link>
 
                         <Link

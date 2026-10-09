@@ -61,60 +61,86 @@ export default function Navbar() {
                     />
                 </Link>
 
-             
-                <Link
-                    href="tel:8778810087"
-                    className="
+
+ <Link
+    href="tel:+18778810087"
+    className="
         hidden
         items-center
-        gap-2
+        gap-2.5
         rounded-full
+        border
+        border-[#079a91]/20
         bg-[#079a91]
         px-5
-        py-2.5
-        text-base
-         font-bold
+        py-2
+         text-[14px]
+        font-semibold
+        tracking-[0.2px]
         text-white
-        transition-colors
+        shadow-[0_4px_14px_rgba(7,154,145,0.18)]
+        transition-all
+        duration-300
+        hover:-translate-y-0.5
         hover:bg-[#078a82]
-        md:flex
+         md:inline-flex
     "
-                >
-                    <Phone
-                        className="h-3.5 w-3.5"
-                        fill="currentColor"
-                    />
-                    8778810087
-                </Link>
+>
+    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15">
+        <Phone
+            className="h-4 w-4"
+            strokeWidth={2.2}
+        />
+    </span>
+
+    <span className="font-sans text-[1.1rem] font-semibold tracking-[1px]">
+        (877) 881-0087
+    </span>
+</Link>
+ 
 
                 {/* Mobile */}
                 <div className="flex items-center gap-2 md:hidden">
 
                     {/* Talk to us */}
-                    <Link
+                     <Link
                         href="tel:+18778810087"
                         className="
-                            hidden
-                            items-center
-                            gap-2
-                            rounded-full
-                            bg-[#079a91]
-                            px-5
-                            py-3.5
-                            text-sm
-                            font-bold
-                            text-white
-                            transition-colors
-                            hover:bg-[#078a82]
-                            md:flex
-                        "
+        hidden
+        items-center
+        gap-2.5
+        rounded-full
+        border
+        border-[#079a91]/20
+        bg-[#079a91]
+        px-5
+        py-3
+        font-sans
+        text-[14px]
+        font-semibold
+        tracking-[0.2px]
+        text-white
+        shadow-[0_4px_14px_rgba(7,154,145,0.18)]
+        transition-all
+        duration-300
+        hover:-translate-y-0.5
+        hover:bg-[#078a82]
+        hover:shadow-[0_6px_18px_rgba(7,154,145,0.28)]
+        md:inline-flex
+    "
                     >
-                        <Phone
-                            className="h-3.5 w-3.5"
-                            fill="currentColor"
-                        />
-                        8778810087
+                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15">
+                            <Phone
+                                className="h-4 w-4"
+                                strokeWidth={2.2}
+                            />
+                        </span>
+
+                        <span className="font-sans text-[14px] font-semibold tracking-[0.3px]">
+                            877-881-0087
+                        </span>
                     </Link>
+ 
 
                     {/* Mobile Menu */}
                     <Sheet

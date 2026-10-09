@@ -1,266 +1,125 @@
+
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-       Mail,
-    Phone,
-    Plane,
- } from "lucide-react";
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { IoLogoLinkedin } from "react-icons/io5";
-import { FaYoutube } from "react-icons/fa";
+import { Phone } from "lucide-react";
 import Image from "next/image";
 
-const quickLinks = [
-   
-    {
-        label: "How It Works",
-        href: "#how-it-works",
-    },
-    {
-        label: "Why TravelConnect",
-        href: "#why-travelconnect",
-    },
-    {
-        label: "FAQs",
-        href: "#faqs",
-    },
-];
-
 const legalLinks = [
-    {
-        label: "Privacy Policy",
-        href: "/privacy-policy",
-    },
-    {
-        label: "Terms & Conditions",
-        href: "/terms-and-conditions",
-    },
-    {
-        label: "Disclaimer",
-        href: "/disclaimer",
-    },
+    { label: "Privacy Policy", href: "/#" },
+    { label: "Terms & Conditions", href: "/#" },
+    { label: "Disclaimer", href: "/#" },
 ];
 
 export default function Footer() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsVisible(window.scrollY > 150);
+        };
+
+        window.addEventListener("scroll", handleScroll, {
+            passive: true,
+        });
+
+        handleScroll();
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <footer className="w-full bg-white">
+        <footer
+            aria-hidden={!isVisible}
+            className={`md:fixed inset-x-0 bottom-0 z-50 max-h-[80vh] w-full overflow-y-auto bg-[#F9FCFC] text-[#15546A] shadow-[0_-4px_20px_rgba(0,0,0,0.08)] transition-all duration-300 ease-in-out ${
+                isVisible
+                    ? "translate-y-0 opacity-100"
+                    : "pointer-events-none translate-y-full opacity-0"
+            }`}
+        >
             {/* Main Footer */}
-            <div
-                className="
-                    mx-auto
-                    w-full
-                    max-w-[1200px]
-                    px-5
-                    py-12
-                    sm:px-8
-                    sm:py-14
-                    lg:px-10
-                    lg:py-16
-                "
-            >
-                <div
-                    className="
-                        grid
-                        grid-cols-1
-                        gap-10
-                        sm:grid-cols-2
-                        lg:grid-cols-[1.3fr_1fr_1fr_1fr]
-                        lg:gap-10
-                    "
-                >
+            <div className="mx-auto w-full max-w-[1200px] px-5 py-4 sm:px-8 lg:px-10">
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-[1.2fr_1.5fr_1fr] lg:items-center lg:gap-8">
                     {/* Brand */}
                     <div>
-                        <Link
-                            href="/"
-                            className="
-                                inline-flex
-                                items-center
-                                gap-3
-                            "
-                        >
-                   
-
-
-                    <Image
-                        src="/images/vuelofarelogo.svg"
-                        alt="Vuelofare"
-                        width={140}
-                        height={40}
-                        className="h-auto w-[100px] sm:flex md:w-[140px]"
-                    />
-                </Link>
-                   
-
-                        <p
-                            className="
-                                mt-4
-                                max-w-[290px]
-                                text-[14px]
-                                font-medium
-                                leading-[1.6]
-                                text-[#718b9b]
-                                sm:text-[15px]
-                            "
-                        >
-                            Real people. Expert support.
-                            Better journeys.
-                        </p>
-
-                        {/* Social Icons */}
-                        <div className="mt-6 flex items-center gap-2.5">
-                            <SocialLink
-                                href="#"
-                                label="Facebook"
-                                icon={<FaFacebook size={16} />}
+                        <Link href="/" className="inline-flex items-center">
+                            <Image
+                                src="/images/vuelofarelogo.svg"
+                                alt="Vuelofare"
+                                width={120}
+                                height={35}
+                                className="h-auto w-[100px] sm:w-[120px]"
                             />
-
-                            <SocialLink
-                                href="#"
-                                label="Instagram"
-                                icon={<FaInstagram size={16} />}
-                            />
-
-                            <SocialLink
-                                href="#"
-                                label="LinkedIn"
-                                icon={<IoLogoLinkedin size={16} />}
-                            />
-
-                            <SocialLink
-                                href="#"
-                                label="YouTube"
-                                icon={<FaYoutube size={16} />}
-                            />
-                        </div>
-                    </div>
-
-                    {/* Quick Links */}
-                    <FooterColumn
-                        title="Quick Links"
-                        links={quickLinks}
-                    />
-
-                    {/* Legal */}
-                    <FooterColumn
-                        title="Legal"
-                        links={legalLinks}
-                    />
-
-                    {/* Contact */}
-                    <div>
-                        <h3
-                            className="
-                                text-[16px]
-                                font-bold
-                                text-[#073452]
-                                sm:text-[17px]
-                            "
-                        >
-                            Contact
-                        </h3>
-
-                        <Link
-                            href="tel:8778810087"
-                            className="
-                                mt-5
-                                flex
-                                items-center
-                                gap-3
-                                text-[15px]
-                                font-bold
-                                text-[#073452]
-                                transition-colors
-                                hover:text-[#159b9c]
-                                sm:text-[16px]
-                            "
-                        >
-                            <span
-                                className="
-                                    flex
-                                    h-9
-                                    w-9
-                                    shrink-0
-                                    items-center
-                                    justify-center
-                                    rounded-full
-                                    bg-[#e8f7f6]
-                                    text-[#159b9c]
-                                "
-                            >
-                                <Phone size={16} />
-                            </span>
-
-                            <span className="text-2xl">8778810087</span>
                         </Link>
 
-                        <p
-                            className="
-                                ml-12
-                                mt-1
-                                text-[12px]
-                                font-medium
-                                text-[#8ba0ac]
-                                sm:text-[13px]
-                            "
-                        >
-                            Mon - Sun, 24/7
+                        <p className="mt-2 max-w-[260px] text-xs font-medium leading-5 text-[#718b9b] sm:text-[13px]">
+                            Real people. Expert support. Better journeys.
+                        </p>
+                    </div>
+
+                    {/* Address */}
+                    <div className="w-fit">
+                        <h3 className="text-sm font-bold text-[#073452] sm:text-[15px]">
+                            Our Address
+                        </h3>
+
+                        <p className="mt-2 max-w-[320px] text-xs font-medium leading-5 text-[#718b9b] sm:text-[13px]">
+                            B-16 S/F R/SIDE, Janakpuri Community Centre,
+                            Janakpuri, New Delhi – 110058
                         </p>
 
-                        {/* Brand Badge */}
-                        <div
-                            className="
-                                mt-6
-                                flex
-                                max-w-[240px]
-                                items-center
-                                gap-3
-                                rounded-full
-                                bg-[#e7f8f6]
-                                px-4
-                                py-3
-                            "
-                        >
-                            <span
-                                className="
-                                    flex
-                                    h-8
-                                    w-8
-                                    shrink-0
-                                    items-center
-                                    justify-center
-                                    rounded-full
-                                    bg-[#159b9c]
-                                    text-white
-                                "
+                        <p className="mt-1 text-[11px] font-medium text-[#718b9b] sm:text-xs">
+                            The Unit of JS Enterprises
+                        </p>
+                    </div>
+
+                    {/* Legal and Contact */}
+                    <div className="grid grid-cols-2 gap-10 md:w-[400px]">
+                        {/* Legal */}
+                        <div>
+                            <h3 className="text-sm font-bold text-[#073452] sm:text-[15px]">
+                                Legal
+                            </h3>
+
+                            <ul className="mt-3 space-y-2">
+                                {legalLinks.map((link) => (
+                                    <li key={link.label}>
+                                        <Link
+                                            href={link.href}
+                                            className="text-xs font-medium text-[#718b9b] transition-colors hover:text-[#159b9c] sm:text-[13px]"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Contact */}
+                        <div>
+                            <h3 className="text-sm font-bold text-[#073452] sm:text-[15px]">
+                                Contact
+                            </h3>
+
+                            <Link
+                                href="tel:8778810087"
+                                className="mt-3 inline-flex items-center gap-2 text-xs font-semibold text-[#073452] transition-colors hover:text-[#159b9c] sm:text-[13px]"
                             >
-                                <Mail size={14} />
-                            </span>
+                                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e8f7f6] text-[#159b9c]">
+                                    <Phone size={14} />
+                                </span>
 
-                            <div>
-                                <p
-                                    className="
-                                        text-[13px]
-                                        font-bold
-                                        text-[#073452]
-                                        md:text-base
-                                    "
-                                >
-                                 Vuelofare 
-                                </p>
+                                <span className="md:text-lg">
+                                    (877) 881-0087
+                                </span>
+                            </Link>
 
-                                <p
-                                    className="
-                                        mt-0.5
-                                        text-[10px]
-                                        font-medium
-                                        text-[#7a929e]
-                                    "
-                                >
-                                    Your journey, Our priority.
-                                </p>
-                            </div>
+                            <p className="mt-1 text-[12px] font-medium text-[#8ba0ac]">
+                                Mon - Sun, 24/7
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -268,42 +127,12 @@ export default function Footer() {
 
             {/* Bottom Bar */}
             <div className="border-t border-[#e7eeee]">
-                <div
-                    className="
-                        mx-auto
-                        flex
-                        w-full
-                        max-w-[1200px]
-                        flex-col
-                        gap-3
-                        px-5
-                        py-5
-                        sm:px-8
-                        lg:flex-row
-                        lg:items-center
-                        lg:justify-between
-                        lg:px-10
-                    "
-                >
-                    <p
-                        className="
-                            text-[12px]
-                            font-medium
-                            text-[#8ba0ac]
-                            sm:text-[13px]
-                        "
-                    >
-                        © 2026 TravelConnect. All rights reserved.
+                <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-1 px-5 py-2 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
+                    <p className="text-[10px] font-medium text-[#8ba0ac] sm:text-[11px]">
+                        © 2026 Vuelofare. All rights reserved.
                     </p>
 
-                    <p
-                        className="
-                            text-[12px]
-                            font-medium
-                            text-[#8ba0ac]
-                            sm:text-[13px]
-                        "
-                    >
+                    <p className="text-[10px] font-medium text-[#8ba0ac] sm:text-[11px]">
                         Travel smarter. With people who care.
                     </p>
                 </div>
@@ -311,98 +140,3 @@ export default function Footer() {
         </footer>
     );
 }
-
-/* --------------------------------
-   Footer Column
--------------------------------- */
-
-interface FooterColumnProps {
-    title: string;
-    links: {
-        label: string;
-        href: string;
-    }[];
-}
-
-function FooterColumn({
-    title,
-    links,
-}: FooterColumnProps) {
-    return (
-        <div>
-            <h3
-                className="
-                    text-[16px]
-                    font-bold
-                    text-[#073452]
-                    sm:text-[17px]
-                "
-            >
-                {title}
-            </h3>
-
-            <ul className="mt-5 space-y-3">
-                {links.map((link) => (
-                    <li key={link.label}>
-                        <Link
-                            href={link.href}
-                            className="
-                                text-[14px]
-                                font-medium
-                                text-[#718b9b]
-                                transition-colors
-                                hover:text-[#159b9c]
-                                sm:text-[15px]
-                            "
-                        >
-                            {link.label}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-}
-
-/* --------------------------------
-   Social Link
--------------------------------- */
-
-interface SocialLinkProps {
-    href: string;
-    label: string;
-    icon: React.ReactNode;
-}
-
-function SocialLink({
-    href,
-    label,
-    icon,
-}: SocialLinkProps) {
-    return (
-        <Link
-            href={href}
-            aria-label={label}
-            className="
-                flex
-                h-9
-                w-9
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-[#dce8e9]
-                text-[#486477]
-                transition-all
-                duration-300
-                hover:border-[#159b9c]
-                hover:bg-[#159b9c]
-                hover:text-white
-            "
-        >
-            {icon}
-        </Link>
-    );
-}
-
- 

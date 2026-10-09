@@ -72,11 +72,8 @@ const services: Service[] = [
 
 function ServiceCard({ service }: { service: Service }) {
     return (
-        <Link
-            href={`/services/${service?.slug}`}
-            className="group block overflow-hidden rounded-[18px] bg-white shadow-[0_8px_30px_rgba(0,56,59,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,56,59,0.10)]"
-        >
-            <article>
+         
+            <article className="shadow-lg pb-6">
                 {/* Image */}
                 <div className="relative aspect-[2.7/1]">
                     <Image
@@ -98,7 +95,7 @@ function ServiceCard({ service }: { service: Service }) {
                 </div>
 
                 {/* Content */}
-                <div className="flex min-h-[178px] flex-col px-5 pb-5 pt-10">
+                <div className="flex min-h-[148px] flex-col px-5  pt-10">
                     <h3 className="text-[20px] font-bold leading-[1.15] tracking-tight text-[#073452] sm:text-[21px]">
                         {service.title}
                     </h3>
@@ -107,38 +104,10 @@ function ServiceCard({ service }: { service: Service }) {
                         {service.description}
                     </p>
 
-                    <div className="mt-auto flex items-center gap-4 pt-3">
-                        <span className="text-[14px] font-bold text-[#159b9c]">
-                            Learn More
-                        </span>
-
-                        <div
-                            className="
-                                flex
-                                h-10
-                                w-10
-                                items-center
-                                justify-center
-                                rounded-full
-                                border
-                                border-[#b9d2d8]
-                                bg-white
-                                text-[#159b9c]
-                                transition-all
-                                duration-300
-                                group-hover:translate-x-1
-                                group-hover:border-[#159b9c]
-                                group-hover:bg-[#159b9c]
-                                group-hover:text-white
-                            "
-                        >
-                            <ArrowRight size={18} strokeWidth={2.2} />
-                        </div>
-                    </div>
+                   
                 </div>
             </article>
-        </Link>
-    );
+     );
 }
 
 export default function ServicesSection() {
