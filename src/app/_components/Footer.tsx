@@ -13,24 +13,28 @@ import {
     DialogDescription,
 } from "@/components/ui/dialog";
 
+
 const legalLinks = [
-    {
-        label: "Privacy Policy",
-        content: `Last updated: 2026
-Vuelofare  respects your privacy. When you call, information you voluntarily provide may be used to assist with your travel needs and for legitimate service operations. We do not sell your personal information.
-For privacy questions, please call  (877) 881-0087.`,
-    },
+{
+    label: "Privacy Policy",
+    content: `Last updated: 2026
+
+Vuelofare respects your privacy. When you call, information you voluntarily provide may be used to assist with your travel needs and for legitimate service operations. We do not sell your personal information.
+
+For privacy questions, please call (877) 881-0087.`,
+},
     {
         label: "Terms & Conditions",
-        content:
-            "Vuelofare offers travel assistance by connecting customers with experienced travel specialists. We operate independently and are not affiliated with, sponsored by, or endorsed by any airline, hotel, or other travel service provider.Vuelofaredoes not directly sell airline tickets. Your mobile carrier’s standard calling charges may apply, depending on your service provider and phone plan.",
+        content: `Vuelofare offers travel assistance by connecting customers with experienced travel specialists. We operate independently and are not affiliated with, sponsored by, or endorsed by any airline, hotel, or other travel service provider.
+Vuelofare does not directly sell airline tickets. Your mobile carrier's standard calling charges may apply, depending on your service provider and phone plan.`,
     },
     {
         label: "Disclaimer",
-        content:
-            "Vuelofare operates as an independent travel assistance service and is not affiliated with, sponsored by, endorsed by, or associated with any airline, hotel, cruise operator, or other travel service provider.All bookings, reservations, and purchases are subject to the terms, conditions, and policies of the respective travel providers.",
+        content: `Vuelofare operates as an independent travel assistance service and is not affiliated with, sponsored by, endorsed by, or associated with any airline, hotel, cruise operator, or other travel service provider.
+All bookings, reservations, and purchases are subject to the terms, conditions, and policies of the respective travel providers.`,
     },
 ];
+
 
 export default function Footer() {
     const [selectedLegal, setSelectedLegal] = useState<
@@ -163,21 +167,21 @@ export default function Footer() {
                             {selectedLegal?.label}
                         </DialogTitle>
 
+
                         <DialogDescription className="whitespace-pre-line text-base leading-7 text-[#718b9b]">
                             {selectedLegal?.label === "Privacy Policy" ? (
                                 <>
                                     <strong className="font-bold text-[#073452]">
-                                        Last updated: 2026
+                                        {selectedLegal.content.split("\n\n")[0]}
                                     </strong>
                                     {"\n\n"}
-                                    Vuelofarerespects your privacy. When you call, information you voluntarily provide may be used to assist with your travel needs and for legitimate service operations. We do not sell your personal information.
-                                    {"\n\n"}
-                                    For privacy questions, please call (844) 595-0263.
+                                    {selectedLegal.content.split("\n\n").slice(1).join("\n\n")}
                                 </>
                             ) : (
                                 selectedLegal?.content
                             )}
                         </DialogDescription>
+
                     </DialogHeader>
                 </DialogContent>
             </Dialog>
