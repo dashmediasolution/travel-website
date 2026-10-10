@@ -59,32 +59,31 @@ export default function Navbar() {
                         height={40}
                         className="h-auto w-[100px] sm:flex md:w-[140px]"
                     />
-                </Link>
-
+                </Link>      
 
                 <Link
-                    href="tel:+18778810087"
+                    href="tel:8778810087"
                     className="
-        hidden
-        items-center
-        gap-2.5
-        rounded-full
-        border
-        border-[#079a91]/20
-        bg-[#079a91]
-        px-5
-        py-2
-         text-[14px]
-        font-semibold
-        tracking-[0.2px]
-        text-white
-        shadow-[0_4px_14px_rgba(7,154,145,0.18)]
-        transition-all
-        duration-300
-        hover:-translate-y-0.5
-        hover:bg-[#078a82]
-         md:inline-flex
-    "
+                     
+                    items-center
+                    gap-2.5
+                    rounded-full
+                    border
+                    border-[#079a91]/20
+                    bg-[#079a91]
+                    md:px-5
+                    md:py-2
+                    text-[14px]
+                    font-semibold
+                    tracking-[0.2px]
+                    text-white
+                    shadow-[0_4px_14px_rgba(7,154,145,0.18)]
+                    transition-all
+                    duration-300
+                    hover:-translate-y-0.5
+                    hover:bg-[#078a82]
+                    md:inline-flex
+                "
                 >
                     <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15">
                         <Phone
@@ -99,8 +98,8 @@ export default function Navbar() {
                 </Link>
 
 
-               
-               
+
+
             </div>
         </header>
     );
