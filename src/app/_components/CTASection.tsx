@@ -160,34 +160,7 @@ export default function CTASection() {
                             <span>Call (877) 881-0087</span>
                         </Link>
 
-                        <Link
-                            href="#services"
-                            className="
-                                inline-flex
-                                h-13
-                                items-center
-                                gap-2
-                                rounded-full
-                                border
-                                border-white/20
-                                px-5
-                                py-3
-                                text-[18px]
-                                font-semibold
-                                text-white/85
-                                transition-all
-                                duration-300
-                                hover:border-[#55d8ce]
-                                hover:text-[#55d8ce]
-                            "
-                        >
-                            Explore Services
-
-                            <ArrowUpRight
-                                size={17}
-                                strokeWidth={2}
-                            />
-                        </Link>
+                        
                     </div>
                 </div>
 
